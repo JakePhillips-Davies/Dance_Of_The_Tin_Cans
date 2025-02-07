@@ -149,6 +149,23 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   range: 8000
+  noiseScale: 2990
+  density: 0.5
+  fade: 1.72
+  maxSpawnSpeed: 1
+  maxSpawnAngularVelocity: 0.9
+  maxScale: 169
+  minScale: 136
+  asteroidsTypes:
+  - {fileID: 8019027131326460658, guid: 9bbea5d4ddafd274ab27abd840cd1f5a, type: 3}
+  - {fileID: 6369198662593775813, guid: 476ba7c5b6936014093649069cfd0c9b, type: 3}
+  - {fileID: 2605148359453269658, guid: aef3731df829e074b88ceb663c5787df, type: 3}
+  - {fileID: 1572185007058187615, guid: 5bb06e0973f65ba489f68de9915e2234, type: 3}
+  - {fileID: 7517001127385129869, guid: 2d1f9519e08d36e4587f826175fcceb1, type: 3}
+  drawRange: 1
+  populateSpawnsInEditor: 1
+  drawSpawnPoints: 1
+  usingDebugSeed: 1
 --- !u!4 &51496718
 Transform:
   m_ObjectHideFlags: 0
@@ -222,9 +239,9 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
-  field of view: 60
+  near clip plane: 0.5
+  far clip plane: 10000
+  field of view: 80
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -373,6 +390,68 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 832575517}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1098698609
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1098698611}
+  - component: {fileID: 1098698610}
+  m_Layer: 0
+  m_Name: Asteroid field 2
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1098698610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098698609}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c6faae52fe7de442872a1ef7600574b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 8000
+  noiseScale: 100
+  density: 0.52
+  fade: 0.87
+  maxSpawnSpeed: 1
+  maxSpawnAngularVelocity: 0.9
+  maxScale: 71
+  minScale: 37
+  asteroidsTypes:
+  - {fileID: 8019027131326460658, guid: 9bbea5d4ddafd274ab27abd840cd1f5a, type: 3}
+  - {fileID: 6369198662593775813, guid: 476ba7c5b6936014093649069cfd0c9b, type: 3}
+  - {fileID: 2605148359453269658, guid: aef3731df829e074b88ceb663c5787df, type: 3}
+  - {fileID: 1572185007058187615, guid: 5bb06e0973f65ba489f68de9915e2234, type: 3}
+  - {fileID: 7517001127385129869, guid: 2d1f9519e08d36e4587f826175fcceb1, type: 3}
+  drawRange: 1
+  populateSpawnsInEditor: 1
+  drawSpawnPoints: 1
+  usingDebugSeed: 1
+--- !u!4 &1098698611
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1098698609}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -832,6 +911,7 @@ SceneRoots:
   - {fileID: 1543917647}
   - {fileID: 582532418}
   - {fileID: 51496718}
+  - {fileID: 1098698611}
   - {fileID: 1786886775}
   - {fileID: 4279697131049108002}
   - {fileID: 3994094524444393680}
