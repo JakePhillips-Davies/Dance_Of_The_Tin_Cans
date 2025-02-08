@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
@@ -5,7 +6,7 @@ using UnityEngine;
 public class Asteroid : MonoBehaviour
 {
     // 
-    //Private material list
+    [SerializeField] private List<Ore> oreList;
     
     private Rigidbody rb;
     [SerializeField] private Vector3 initialVelocity; public void SetInitialVelocity(Vector3 velocity) {initialVelocity = velocity;}
