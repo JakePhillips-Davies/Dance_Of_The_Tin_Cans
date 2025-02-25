@@ -11,6 +11,7 @@ public class Asteroid : MonoBehaviour
     private Rigidbody rb;
     [SerializeField] private Vector3 initialVelocity; public void SetInitialVelocity(Vector3 velocity) {initialVelocity = velocity;}
     [SerializeField] private Vector3 initialAngularVelocity; public void SetInitialAngularVelocity(Vector3 aVelocity) {initialAngularVelocity = aVelocity;}
+    [SerializeField] private float health;
     //
 
     private void Start() {
@@ -18,6 +19,17 @@ public class Asteroid : MonoBehaviour
 
         rb.linearVelocity = initialVelocity;
         rb.angularVelocity = initialAngularVelocity;
+
+        health = 1000;
+    }
+
+    public void Damage(float damage) {
+        health -= damage;
+
+        if (health <= 0.0)
+        {
+            Destroy(this.gameObject);
+        }
     }
 
     // private void FixedUpdate() {
