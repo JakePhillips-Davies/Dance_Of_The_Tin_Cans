@@ -82,9 +82,9 @@ public class AsteroidSpawner : MonoBehaviour
         {
             int i = Random.Range(0, asteroidsTypes.Count - 1);
 
-            GameObject spawnedAsteroid = Instantiate<GameObject>(asteroidsTypes[i], spawnPoint, Random.rotation);
+            GameObject spawnedAsteroid = Instantiate<GameObject>(asteroidsTypes[i], spawnPoint, Random.rotation, transform);
 
-            // spawnedAsteroid.GetComponent<Asteroid>().SetInitialVelocity(Random.onUnitSphere * Random.Range(0.0f, maxSpawnSpeed));
+            spawnedAsteroid.GetComponent<Asteroid>().SetInitialVelocity(Random.onUnitSphere * Random.Range(0.0f, maxSpawnSpeed));
             spawnedAsteroid.GetComponent<Asteroid>().SetInitialAngularVelocity(Random.onUnitSphere * Random.Range(0.0f, maxSpawnAngularVelocity));
 
             spawnedAsteroid.transform.localScale *= Random.Range(minScale, maxScale);

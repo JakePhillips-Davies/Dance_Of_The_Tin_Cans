@@ -2,69 +2,41 @@ using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
-[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Rigidbody), typeof(Health))]
 public class SpaceShip : MonoBehaviour
 {
     //
-    private Vector3 steeringDir;
-    [SerializeField] private float engineForceMax;
-    [SerializeField] private float maxSpeed;
-    [SerializeField] private float stopRange;
-    [SerializeField] private float slowRange;
-    [SerializeField] private float weaponRange;
-    [SerializeField] private float weaponDamage;
+    [field: SerializeField] public float engineForceMax { get; private set; }
+    [field: SerializeField] public float maxSpeed { get; private set; }
+    [field: SerializeField] public float stopRange { get; private set; }
+    [field: SerializeField] public float slowRange { get; private set; }
+    [field: SerializeField] public float weaponRange { get; private set; }
+    [field: SerializeField] public float weaponDamage { get; private set; }
+    [field: SerializeField] public float targetRange { get; private set; }
 
-    private Rigidbody rb;
+    public Rigidbody rb { get; private set; }
+    public Health health { get; private set; }
 
-    private Asteroid tempTarget = null;
+    public Transform target { get; private set; } = null;
+
+    private Color gizmoColour;
     //
 
     private void Start() {
         rb = GetComponent<Rigidbody>();
+        health = GetComponent<Health>();
 
-        rb.AddForce(Random.onUnitSphere * 40000);
-
-        steeringDir = transform.forward;
+        gizmoColour = Random.ColorHSV();
     }
 
-    private void FixedUpdate() {
-        if (tempTarget == null){ ///!!!!!!!! TEMP !!!!!!!!!!!!!
-            foreach (Asteroid asteroid in FindObjectsByType<Asteroid>(FindObjectsSortMode.None)){
-                if (Random.Range(0, 30) == 2){
-                    tempTarget = asteroid;
-                }
-            }
-        }
+    private void OnDrawGizmos() {
+        Gizmos.color = gizmoColour;
 
-
-        Vector3 desiredDir = tempTarget.transform.position - transform.position;
-        
-        transform.rotation = Quaternion.LookRotation(Vector3.RotateTowards(transform.forward, desiredDir, 0.02f, 0.0f)); // rotate towards target
-
-        float distance = desiredDir.magnitude;
-        if (distance < slowRange) {
-
-            float d = (distance - stopRange) / (slowRange - stopRange); // get how far the ship is between slowRange and stopRange [1.0 - 0.0]
-
-            desiredDir = desiredDir.normalized * (maxSpeed * d);
-
-        }
-        else {
-
-            desiredDir = desiredDir.normalized * maxSpeed;
-
-        }
-
-        steeringDir = desiredDir - rb.linearVelocity;
-        steeringDir = Vector3.ClampMagnitude(steeringDir, engineForceMax);
-
-        rb.AddForce(steeringDir, ForceMode.Impulse);
-
-
-        if (distance < weaponRange)
-        {
-            tempTarget.Damage(weaponDamage);
-        }
-
+        if (target != null) Gizmos.DrawLine(transform.position, target.transform.position);
     }
+
+    public void SetTarget(Transform _target) {
+        target = _target;
+    }
+
 }

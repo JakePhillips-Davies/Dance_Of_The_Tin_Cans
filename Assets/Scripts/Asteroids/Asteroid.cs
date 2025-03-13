@@ -2,7 +2,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 
-[RequireComponent(typeof(Rigidbody))]
+[RequireComponent(typeof(Rigidbody), typeof(Health))]
 public class Asteroid : MonoBehaviour
 {
     // 
@@ -11,28 +11,14 @@ public class Asteroid : MonoBehaviour
     private Rigidbody rb;
     [SerializeField] private Vector3 initialVelocity; public void SetInitialVelocity(Vector3 velocity) {initialVelocity = velocity;}
     [SerializeField] private Vector3 initialAngularVelocity; public void SetInitialAngularVelocity(Vector3 aVelocity) {initialAngularVelocity = aVelocity;}
-    [SerializeField] private float health;
+    public Health health { get; private set; }
     //
 
     private void Start() {
         rb = GetComponent<Rigidbody>();
+        health = GetComponent<Health>();
 
         rb.linearVelocity = initialVelocity;
         rb.angularVelocity = initialAngularVelocity;
-
-        health = 1000;
     }
-
-    public void Damage(float damage) {
-        health -= damage;
-
-        if (health <= 0.0)
-        {
-            Destroy(this.gameObject);
-        }
-    }
-
-    // private void FixedUpdate() {
-    //     transform.Rotate(initialAngularVelocity);
-    // }
 }

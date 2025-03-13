@@ -1,0 +1,64 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &7589473467180234951
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2762494831289894372}
+  - component: {fileID: 6345560234498993967}
+  m_Layer: 0
+  m_Name: Asteroid field 1
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2762494831289894372
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7589473467180234951}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2448.4907, y: 2651.684, z: -6052.3843}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &6345560234498993967
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7589473467180234951}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9c6faae52fe7de442872a1ef7600574b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 8000
+  noiseScale: 3000
+  density: 0.51
+  fade: 0.87
+  maxSpawnSpeed: 1
+  maxSpawnAngularVelocity: 0.9
+  maxScale: 200
+  minScale: 149
+  asteroidsTypes:
+  - {fileID: 8019027131326460658, guid: 9bbea5d4ddafd274ab27abd840cd1f5a, type: 3}
+  - {fileID: 6369198662593775813, guid: 476ba7c5b6936014093649069cfd0c9b, type: 3}
+  - {fileID: 2605148359453269658, guid: aef3731df829e074b88ceb663c5787df, type: 3}
+  - {fileID: 1572185007058187615, guid: 5bb06e0973f65ba489f68de9915e2234, type: 3}
+  - {fileID: 7517001127385129869, guid: 2d1f9519e08d36e4587f826175fcceb1, type: 3}
+  drawRange: 1
+  populateSpawnsInEditor: 1
+  drawSpawnPoints: 1
+  usingDebugSeed: 1
