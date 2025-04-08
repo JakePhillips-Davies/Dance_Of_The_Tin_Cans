@@ -13,6 +13,7 @@ public class SpaceShip : MonoBehaviour
     [field: SerializeField] public float weaponRange { get; private set; }
     [field: SerializeField] public float weaponDamage { get; private set; }
     [field: SerializeField] public float targetRange { get; private set; }
+    [field: SerializeField] public float searchRange { get; private set; }
 
     public Rigidbody rb { get; private set; }
     public Health health { get; private set; }

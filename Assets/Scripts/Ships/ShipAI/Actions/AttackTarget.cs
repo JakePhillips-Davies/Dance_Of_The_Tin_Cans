@@ -1,5 +1,4 @@
 using BehaviourTree;
-using UnityEngine;
 
 public class AttackTarget : Node
 {
@@ -17,6 +16,9 @@ public class AttackTarget : Node
 
         if (ship.target.TryGetComponent<Health>(out Health targetHealth)) {
             targetHealth.Damage(ship.weaponDamage);
+        }
+        else {
+            return NodeState.FAILURE;
         }
 
         return NodeState.SUCCESS;

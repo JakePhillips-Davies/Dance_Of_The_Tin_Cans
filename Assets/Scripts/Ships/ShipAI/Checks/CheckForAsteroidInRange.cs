@@ -10,18 +10,22 @@ public class CheckForAsteroidInRange : Node
     }
 
     public override NodeState Evaluate() {
-        
-        if (ship.target == null){ //!!!!!!!! TEMP !!!!!!!!!!!!!
-            foreach (Asteroid asteroid in Object.FindObjectsByType<Asteroid>(FindObjectsSortMode.None)){
-                if (Random.Range(0, 30) == 2){
-                    ship.SetTarget(asteroid.transform);
-                    return NodeState.SUCCESS;
-                }
-            }
-        }
-        else return NodeState.SUCCESS;
+        try {
+            if (ship.target != null) return NodeState.SUCCESS;
 
-        return NodeState.FAILURE;
+            Collider[] asteroidsInRange = Physics.OverlapSphere(ship.transform.position, ship.searchRange, LayerMask.NameToLayer("Asteroid"));
+    
+            int randomCheck = Random.Range(0, asteroidsInRange.Length - 1);
+
+            if (asteroidsInRange[randomCheck].TryGetComponent<Asteroid>(out Asteroid randomAsteroid))
+                ship.SetTarget(randomAsteroid.transform);
+            else return NodeState.FAILURE; // Do something better here
+
+            return NodeState.SUCCESS;
+        }
+        catch (System.Exception) {
+            return NodeState.FAILURE;
+        }
     
     }
 

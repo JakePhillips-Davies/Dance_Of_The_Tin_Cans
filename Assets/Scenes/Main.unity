@@ -396,6 +396,7 @@ MonoBehaviour:
   scrollSensitivity: 5
   orbitRadius: 50
   moveKey: 324
+  focusController: {fileID: 1054982248}
 --- !u!114 &330585549
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1057,6 +1058,7 @@ MonoBehaviour:
   <weaponRange>k__BackingField: 250
   <weaponDamage>k__BackingField: 10
   <targetRange>k__BackingField: 1000
+  <searchRange>k__BackingField: 1000
 --- !u!54 &3994094524444393682
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1225,6 +1227,7 @@ MonoBehaviour:
   <weaponRange>k__BackingField: 250
   <weaponDamage>k__BackingField: 10
   <targetRange>k__BackingField: 1000
+  <searchRange>k__BackingField: 0
 --- !u!54 &8705371768902527890
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1351,6 +1354,7 @@ MonoBehaviour:
   <weaponRange>k__BackingField: 250
   <weaponDamage>k__BackingField: 10
   <targetRange>k__BackingField: 1000
+  <searchRange>k__BackingField: 0
 --- !u!54 &8802091314706439743
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -1,16 +1,19 @@
 using System;
 using UnityEngine;
 
-public class MapCamera : MonoBehaviour
+public class OrbitCamera : MonoBehaviour
 {
     
     [SerializeField] private float sensitivity = 5f;
     [SerializeField] private float scrollSensitivity = 5f;
     [SerializeField] private float orbitRadius = 5f;
     [SerializeField] private KeyCode moveKey = KeyCode.Mouse1;
+    [SerializeField] private FocusController focusController;
 
     private float yaw;
     private float pitch;
+
+    private float camDistance;
 
     void Start() {
         yaw = transform.eulerAngles.y;
@@ -29,10 +32,12 @@ public class MapCamera : MonoBehaviour
             transform.rotation = Quaternion.Euler(pitch, yaw, 0);
         }
 
-        orbitRadius -= Mathf.Clamp(transform.position.magnitude, 0.05f, 100000) * Input.mouseScrollDelta.y * scrollSensitivity / 10;
+        camDistance = (transform.position- focusController.GetFocus().position).magnitude;
+
+        orbitRadius -= Mathf.Clamp(camDistance, 0.05f, 100000) * Input.mouseScrollDelta.y * scrollSensitivity / 10;
         orbitRadius = Mathf.Clamp(orbitRadius, 0, 100000);
 
-        transform.position = -transform.forward * orbitRadius;
+        transform.position = -transform.forward * orbitRadius + focusController.GetFocus().position;
     }
 
 }

@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.UIElements;
 
 [ExecuteInEditMode]
-public class AutoCentre : MonoBehaviour
+public class FocusController : MonoBehaviour
 {
     [SerializeField] UIDocument ui;
     public Transform[] objectList { get; private set; }
@@ -26,17 +26,13 @@ public class AutoCentre : MonoBehaviour
         }
         
     }
-    private void Update() {
-        transform.position -= objectList[focus].position;
-
-        focusName = objectList[focus].name;
-    }
-
-
     private void OnValidate() {
         UpdateObjectList();
     }
 
+    private void Update() {
+        focusName = GetFocus().name;
+    }
 
     public void UpdateObjectList() {
         List<Transform> tempList = new();
@@ -46,5 +42,9 @@ public class AutoCentre : MonoBehaviour
         }
 
         objectList = tempList.ToArray();
+    }
+
+    public Transform GetFocus() {
+        return objectList[focus];
     }
 }
