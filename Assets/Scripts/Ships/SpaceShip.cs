@@ -6,6 +6,7 @@ using Random = UnityEngine.Random;
 public class SpaceShip : MonoBehaviour
 {
     //
+    [field: Title("Variables")]
     [field: SerializeField] public float engineForceMax { get; private set; }
     [field: SerializeField] public float maxSpeed { get; private set; }
     [field: SerializeField] public float weaponRange { get; private set; }
@@ -13,12 +14,24 @@ public class SpaceShip : MonoBehaviour
     [field: SerializeField] public float targetRange { get; private set; }
     [field: SerializeField] public float searchRange { get; private set; }
 
+    [field: Space(10)]
     [field: Title("Logged points/directions")]
-    [field: SerializeField, ReadOnly] public Vector3 searchPoint { get; private set; }
-    [field: SerializeField, ReadOnly] public Vector3 desiredMoveDir { get; private set; }
-    [field: SerializeField, ReadOnly] public Vector3 targetDir { get; private set; }
-    [field: SerializeField, ReadOnly] public Vector3 avoidObstacleDir { get; private set; }
-    [field: SerializeField, ReadOnly] public Vector3 fleeDir { get; private set; }
+    [FoldoutGroup("", nameof(searchPoint), nameof(desiredMoveDir), nameof(targetDir), nameof(avoidObstacleDir), nameof(fleeDir))]
+    [SerializeField] private Void loggedInfoHolder;
+    [field: SerializeField, ReadOnly, HideProperty] public Vector3 searchPoint { get; private set; }
+    [field: SerializeField, ReadOnly, HideProperty] public Vector3 desiredMoveDir { get; private set; }
+    [field: SerializeField, ReadOnly, HideProperty] public Vector3 targetDir { get; private set; }
+    [field: SerializeField, ReadOnly, HideProperty] public Vector3 avoidObstacleDir { get; private set; }
+    [field: SerializeField, ReadOnly, HideProperty] public Vector3 fleeDir { get; private set; }
+
+    [field: Space(10)]
+    [field: Title("Debug settings")]
+    [FoldoutGroup("", nameof(drawDesiredMoveDir), nameof(drawTargetDir), nameof(drawAvoidObstacleDir), nameof(drawFleeDir))]
+    [SerializeField] private Void debugHolder;
+    [field: SerializeField, HideProperty] public bool drawDesiredMoveDir { get; private set; }
+    [field: SerializeField, HideProperty] public bool drawTargetDir { get; private set; }
+    [field: SerializeField, HideProperty] public bool drawAvoidObstacleDir { get; private set; }
+    [field: SerializeField, HideProperty] public bool drawFleeDir { get; private set; }
 
     public Rigidbody rb { get; private set; }
     public Health health { get; private set; }
@@ -31,14 +44,25 @@ public class SpaceShip : MonoBehaviour
     private void Start() {
         rb = GetComponent<Rigidbody>();
         health = GetComponent<Health>();
-
-        gizmoColour = Random.ColorHSV();
     }
 
     private void OnDrawGizmos() {
-        Gizmos.color = gizmoColour;
-
-        if (target != null) Gizmos.DrawLine(transform.position, target.transform.position);
+        if (drawDesiredMoveDir) {
+            Gizmos.color = Color.green;
+            Gizmos.DrawRay(transform.position, desiredMoveDir);
+        }
+        if (drawTargetDir) {
+            Gizmos.color = Color.blue;
+            Gizmos.DrawRay(transform.position, targetDir * 40);
+        }
+        if (drawAvoidObstacleDir) {
+            Gizmos.color = Color.yellow;
+            Gizmos.DrawRay(transform.position, avoidObstacleDir * 40);
+        }
+        if (drawFleeDir) {
+            Gizmos.color = Color.red;
+            Gizmos.DrawRay(transform.position, fleeDir * 40);
+        }
     }
 
     public void SetTarget(Transform _target) {
