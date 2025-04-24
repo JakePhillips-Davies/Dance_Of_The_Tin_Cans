@@ -5,7 +5,10 @@ using Random = UnityEngine.Random;
 [RequireComponent(typeof(Rigidbody), typeof(Health))]
 public class SpaceShip : MonoBehaviour
 {
-    //
+//--#
+    #region Variables
+
+
     [field: Title("Variables")]
     [field: SerializeField] public float engineForceMax { get; private set; }
     [field: SerializeField] public float maxSpeed { get; private set; }
@@ -38,8 +41,13 @@ public class SpaceShip : MonoBehaviour
 
     public Transform target { get; private set; } = null;
 
-    private Color gizmoColour;
-    //
+
+    #endregion
+//--#
+
+//--#
+    #region Unity Methods
+
 
     private void Start() {
         rb = GetComponent<Rigidbody>();
@@ -65,10 +73,17 @@ public class SpaceShip : MonoBehaviour
         }
     }
 
+
+    #endregion
+//--#
+
+//--#
+    #region Setters
+
+
     public void SetTarget(Transform _target) {
         target = _target;
     }
-
     public void SetSearchPoint(Vector3 _searchPoint) {
         searchPoint = _searchPoint;
     }
@@ -86,4 +101,7 @@ public class SpaceShip : MonoBehaviour
         fleeDir = _fleeDir;
     }
 
+
+    #endregion
+//--#
 }
