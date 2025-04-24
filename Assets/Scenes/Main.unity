@@ -583,7 +583,7 @@ MonoBehaviour:
   noiseScale: 100
   density: 0.52
   fade: 0.87
-  maxSpawnSpeed: 10
+  maxSpawnSpeed: 2
   maxSpawnAngularVelocity: 0.9
   maxScale: 71
   minScale: 37
@@ -897,7 +897,7 @@ MonoBehaviour:
   noiseScale: 3000
   density: 0.51
   fade: 0.87
-  maxSpawnSpeed: 10
+  maxSpawnSpeed: 2
   maxSpawnAngularVelocity: 0.9
   maxScale: 200
   minScale: 149
@@ -1053,12 +1053,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <engineForceMax>k__BackingField: 50
   <maxSpeed>k__BackingField: 400
-  <stopRange>k__BackingField: 200
-  <slowRange>k__BackingField: 500
   <weaponRange>k__BackingField: 250
   <weaponDamage>k__BackingField: 10
   <targetRange>k__BackingField: 1000
   <searchRange>k__BackingField: 1000
+  <searchPoint>k__BackingField: {x: 0, y: 0, z: 0}
+  <desiredMoveDir>k__BackingField: {x: 0, y: 0, z: 0}
+  <targetDir>k__BackingField: {x: 0, y: 0, z: 0}
+  <avoidObstacleDir>k__BackingField: {x: 0, y: 0, z: 0}
+  <fleeDir>k__BackingField: {x: 0, y: 0, z: 0}
 --- !u!54 &3994094524444393682
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1222,12 +1225,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <engineForceMax>k__BackingField: 50
   <maxSpeed>k__BackingField: 400
-  <stopRange>k__BackingField: 200
-  <slowRange>k__BackingField: 500
   <weaponRange>k__BackingField: 250
   <weaponDamage>k__BackingField: 10
   <targetRange>k__BackingField: 1000
   <searchRange>k__BackingField: 0
+  <searchPoint>k__BackingField: {x: 0, y: 0, z: 0}
+  <desiredMoveDir>k__BackingField: {x: 0, y: 0, z: 0}
+  <targetDir>k__BackingField: {x: 0, y: 0, z: 0}
+  <avoidObstacleDir>k__BackingField: {x: 0, y: 0, z: 0}
+  <fleeDir>k__BackingField: {x: 0, y: 0, z: 0}
 --- !u!54 &8705371768902527890
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1349,12 +1355,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   <engineForceMax>k__BackingField: 50
   <maxSpeed>k__BackingField: 400
-  <stopRange>k__BackingField: 200
-  <slowRange>k__BackingField: 500
   <weaponRange>k__BackingField: 250
   <weaponDamage>k__BackingField: 10
   <targetRange>k__BackingField: 1000
   <searchRange>k__BackingField: 0
+  <searchPoint>k__BackingField: {x: 0, y: 0, z: 0}
+  <desiredMoveDir>k__BackingField: {x: 0, y: 0, z: 0}
+  <targetDir>k__BackingField: {x: 0, y: 0, z: 0}
+  <avoidObstacleDir>k__BackingField: {x: 0, y: 0, z: 0}
+  <fleeDir>k__BackingField: {x: 0, y: 0, z: 0}
 --- !u!54 &8802091314706439743
 Rigidbody:
   m_ObjectHideFlags: 0

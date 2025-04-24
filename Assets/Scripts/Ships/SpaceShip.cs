@@ -1,5 +1,5 @@
-using Unity.Mathematics;
 using UnityEngine;
+using EditorAttributes;
 using Random = UnityEngine.Random;
 
 [RequireComponent(typeof(Rigidbody), typeof(Health))]
@@ -12,11 +12,13 @@ public class SpaceShip : MonoBehaviour
     [field: SerializeField] public float weaponDamage { get; private set; }
     [field: SerializeField] public float targetRange { get; private set; }
     [field: SerializeField] public float searchRange { get; private set; }
-    [field: SerializeField] public Vector3 searchPoint { get; private set; }
-    [field: SerializeField] public Vector3 desiredMoveDir { get; private set; }
-    [field: SerializeField] public Vector3 targetDir { get; private set; }
-    [field: SerializeField] public Vector3 avoidObstacleDir { get; private set; }
-    [field: SerializeField] public Vector3 fleeDir { get; private set; }
+
+    [field: Title("Logged points/directions")]
+    [field: SerializeField, ReadOnly] public Vector3 searchPoint { get; private set; }
+    [field: SerializeField, ReadOnly] public Vector3 desiredMoveDir { get; private set; }
+    [field: SerializeField, ReadOnly] public Vector3 targetDir { get; private set; }
+    [field: SerializeField, ReadOnly] public Vector3 avoidObstacleDir { get; private set; }
+    [field: SerializeField, ReadOnly] public Vector3 fleeDir { get; private set; }
 
     public Rigidbody rb { get; private set; }
     public Health health { get; private set; }
