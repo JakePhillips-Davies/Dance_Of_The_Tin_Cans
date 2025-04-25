@@ -27,7 +27,7 @@ public class LogFleeDir : Node
 
                     fleeDir += -directionToCollider * (100f / distanceToCollider);
 
-                    if (ship.closestHostileDist > distanceToCollider || ship.closestHostileDist == -1) ship.SetClosestHostileDist(distanceToCollider);
+                    if (ship.closestHostileDist > distanceToCollider || ship.closestHostileDist == 0) ship.SetClosestHostileDist(distanceToCollider);
                 }
             }            
 

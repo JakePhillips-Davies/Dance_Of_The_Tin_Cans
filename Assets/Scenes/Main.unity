@@ -537,7 +537,7 @@ Transform:
   m_GameObject: {fileID: 1054982247}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 2448.4907, y: -2651.684, z: 6060.5845}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -579,12 +579,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c6faae52fe7de442872a1ef7600574b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 8000
+  range: 12031
   noiseScale: 100
-  density: 0.52
-  fade: 0.87
+  density: 0.525
+  fade: 0.827
   maxSpawnSpeed: 2
-  maxSpawnAngularVelocity: 0.9
+  maxSpawnAngularVelocity: 0.912
   maxScale: 71
   minScale: 37
   asteroidsTypes:
@@ -606,11 +606,57 @@ Transform:
   m_GameObject: {fileID: 1098698609}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2448.4907, y: 2651.684, z: -6052.3843}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1054982249}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1334857904
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1334857906}
+  - component: {fileID: 1334857905}
+  m_Layer: 0
+  m_Name: Settings
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1334857905
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334857904}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d74613ca9506696479e44c2ad0a2202c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <collisionDamageScale>k__BackingField: 0.01
+  <collisionDamagePower>k__BackingField: 1.5
+--- !u!4 &1334857906
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1334857904}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -3.207085, y: 0.5600522, z: -1.5504518}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1354192765
 GameObject:
@@ -842,6 +888,7 @@ GameObject:
   - component: {fileID: 8705371768902527889}
   - component: {fileID: 8705371768902527892}
   - component: {fileID: 8705371768902527891}
+  - component: {fileID: 8705371768902527894}
   m_Layer: 22
   m_Name: Pirate
   m_TagString: Untagged
@@ -894,12 +941,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9c6faae52fe7de442872a1ef7600574b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 8000
-  noiseScale: 3000
-  density: 0.51
-  fade: 0.87
+  range: 12031
+  noiseScale: 7500
+  density: 0.194
+  fade: 0.8
   maxSpawnSpeed: 2
-  maxSpawnAngularVelocity: 0.9
+  maxSpawnAngularVelocity: 0.912
   maxScale: 200
   minScale: 149
   asteroidsTypes:
@@ -1035,7 +1082,7 @@ Transform:
   m_GameObject: {fileID: 3451572504591519404}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2448.4907, y: 2651.684, z: -6060.5845}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1053,16 +1100,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdeaf62f7a9658447a656a5125d4f577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <engineForceMax>k__BackingField: 50
-  <maxSpeed>k__BackingField: 400
-  <weaponRange>k__BackingField: 250
+  <engineForceMax>k__BackingField: 40
+  <maxSpeed>k__BackingField: 200
+  <weaponRange>k__BackingField: 300
   <weaponDamage>k__BackingField: 10
   <scannerRange>k__BackingField: 1250
   <searchRange>k__BackingField: 1000
-  <avoidObstacleRange>k__BackingField: 200
+  <avoidObstacleRange>k__BackingField: 150
   <searchPoint>k__BackingField: {x: 0, y: 0, z: 0}
   <desiredMoveDir>k__BackingField: {x: 0, y: 0, z: 0}
   <targetDir>k__BackingField: {x: 0, y: 0, z: 0}
+  <targetDist>k__BackingField: 0
   <avoidObstacleDir>k__BackingField: {x: 0, y: 0, z: 0}
   <closestObstacleDist>k__BackingField: 0
   <fleeDir>k__BackingField: {x: 0, y: 0, z: 0}
@@ -1147,6 +1195,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <maxHealth>k__BackingField: 1000
+  currentHealth: 0
 --- !u!114 &3994094524444393686
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1159,10 +1208,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0363b993fa80b274c82d868945e31cdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <recklessness>k__BackingField: 0
-  <fearlessness>k__BackingField: 0
-  <cautioun>k__BackingField: 0
+  <cautiousness>k__BackingField: 0.398
+  <fearfulness>k__BackingField: 0.879
+  <jumpiness>k__BackingField: 0.452
+  <greediness>k__BackingField: 0.796
+  <normalMaxSpeed>k__BackingField: 200
+  <caution>k__BackingField: 0
   <fear>k__BackingField: 0
+  <greed>k__BackingField: 0
 --- !u!4 &4279697131049108002
 Transform:
   m_ObjectHideFlags: 0
@@ -1172,7 +1225,7 @@ Transform:
   m_GameObject: {fileID: 7390931807617661565}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2448.4907, y: 2651.684, z: -6146.284}
+  m_LocalPosition: {x: 0, y: 0, z: -142.1}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1187,7 +1240,7 @@ Transform:
   m_GameObject: {fileID: 804128941157995176}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2448.4907, y: 2651.684, z: -5961.5845}
+  m_LocalPosition: {x: 0, y: 0, z: 143.2}
   m_LocalScale: {x: 5, y: 5, z: 5}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -1202,7 +1255,7 @@ Transform:
   m_GameObject: {fileID: 1158450343118233824}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -2448.4907, y: 2651.684, z: -6052.3843}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1251,26 +1304,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdeaf62f7a9658447a656a5125d4f577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <engineForceMax>k__BackingField: 50
-  <maxSpeed>k__BackingField: 400
-  <weaponRange>k__BackingField: 250
+  <engineForceMax>k__BackingField: 40
+  <maxSpeed>k__BackingField: 200
+  <weaponRange>k__BackingField: 300
   <weaponDamage>k__BackingField: 10
-  <scannerRange>k__BackingField: 0
-  <searchRange>k__BackingField: 0
-  <avoidObstacleRange>k__BackingField: 0
+  <scannerRange>k__BackingField: 1250
+  <searchRange>k__BackingField: 1000
+  <avoidObstacleRange>k__BackingField: 150
   <searchPoint>k__BackingField: {x: 0, y: 0, z: 0}
   <desiredMoveDir>k__BackingField: {x: 0, y: 0, z: 0}
   <targetDir>k__BackingField: {x: 0, y: 0, z: 0}
+  <targetDist>k__BackingField: 0
   <avoidObstacleDir>k__BackingField: {x: 0, y: 0, z: 0}
   <closestObstacleDist>k__BackingField: 0
   <fleeDir>k__BackingField: {x: 0, y: 0, z: 0}
   <closestHostileDist>k__BackingField: 0
-  <drawDesiredMoveDir>k__BackingField: 0
-  <drawTargetDir>k__BackingField: 0
-  <drawScannerRange>k__BackingField: 0
-  <drawAvoidObstacleDir>k__BackingField: 0
-  <drawAvoidObstacleRange>k__BackingField: 0
-  <drawFleeDir>k__BackingField: 0
+  <drawDesiredMoveDir>k__BackingField: 1
+  <drawTargetDir>k__BackingField: 1
+  <drawScannerRange>k__BackingField: 1
+  <drawAvoidObstacleDir>k__BackingField: 1
+  <drawAvoidObstacleRange>k__BackingField: 1
+  <drawFleeDir>k__BackingField: 1
 --- !u!54 &8705371768902527890
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -1333,6 +1387,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <maxHealth>k__BackingField: 1000
+  currentHealth: 0
 --- !u!114 &8705371768902527893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1345,10 +1400,26 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0363b993fa80b274c82d868945e31cdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <recklessness>k__BackingField: 0
-  <fearlessness>k__BackingField: 0
-  <cautioun>k__BackingField: 0
+  <cautiousness>k__BackingField: 0.636
+  <fearfulness>k__BackingField: 0.442
+  <jumpiness>k__BackingField: 1
+  <greediness>k__BackingField: 0.534
+  <normalMaxSpeed>k__BackingField: 200
+  <caution>k__BackingField: 0
   <fear>k__BackingField: 0
+  <greed>k__BackingField: 0
+--- !u!114 &8705371768902527894
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804128941157995176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 580296ef88ad7c945af6adbb30f4c8e6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!23 &8802091314706439741
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1406,16 +1477,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdeaf62f7a9658447a656a5125d4f577, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <engineForceMax>k__BackingField: 50
-  <maxSpeed>k__BackingField: 400
+  <engineForceMax>k__BackingField: 40
+  <maxSpeed>k__BackingField: 200
   <weaponRange>k__BackingField: 250
   <weaponDamage>k__BackingField: 10
   <scannerRange>k__BackingField: 0
   <searchRange>k__BackingField: 0
-  <avoidObstacleRange>k__BackingField: 0
+  <avoidObstacleRange>k__BackingField: 150
   <searchPoint>k__BackingField: {x: 0, y: 0, z: 0}
   <desiredMoveDir>k__BackingField: {x: 0, y: 0, z: 0}
   <targetDir>k__BackingField: {x: 0, y: 0, z: 0}
+  <targetDist>k__BackingField: 0
   <avoidObstacleDir>k__BackingField: {x: 0, y: 0, z: 0}
   <closestObstacleDist>k__BackingField: 0
   <fleeDir>k__BackingField: {x: 0, y: 0, z: 0}
@@ -1488,6 +1560,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <maxHealth>k__BackingField: 1000
+  currentHealth: 0
 --- !u!114 &8802091314706439746
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1500,10 +1573,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0363b993fa80b274c82d868945e31cdb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <recklessness>k__BackingField: 0
-  <fearlessness>k__BackingField: 0
-  <cautioun>k__BackingField: 0
+  <cautiousness>k__BackingField: 0.01
+  <fearfulness>k__BackingField: 0.01
+  <jumpiness>k__BackingField: 0.01
+  <greediness>k__BackingField: 0.01
+  <normalMaxSpeed>k__BackingField: 200
+  <caution>k__BackingField: 0
   <fear>k__BackingField: 0
+  <greed>k__BackingField: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
@@ -1511,6 +1588,7 @@ SceneRoots:
   - {fileID: 2074709935}
   - {fileID: 832575519}
   - {fileID: 1543917647}
+  - {fileID: 1334857906}
   - {fileID: 330585546}
   - {fileID: 582532418}
   - {fileID: 1054982249}

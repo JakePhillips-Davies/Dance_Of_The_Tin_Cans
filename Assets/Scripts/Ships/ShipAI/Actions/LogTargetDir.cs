@@ -16,6 +16,7 @@ public class LogTargetDir : Node
             Vector3 desiredDir = target.transform.position - ship.transform.position;
     
             ship.SetTargetDir(desiredDir.normalized);
+            ship.SetTargetDist(desiredDir.magnitude);
     
             return NodeState.SUCCESS;
         }

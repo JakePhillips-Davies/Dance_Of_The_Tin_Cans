@@ -23,7 +23,7 @@ public class LogAvoidObstacleDir : Node
 
                     avoidObstacleDir += -directionToCollider * (1f / distanceToCollider);
 
-                    if (ship.closestObstacleDist > distanceToCollider || ship.closestObstacleDist == -1) ship.SetClosestObstacleDist(distanceToCollider);
+                    if (ship.closestObstacleDist > distanceToCollider || ship.closestObstacleDist == 0) ship.SetClosestObstacleDist(distanceToCollider);
                 }
             }            
 

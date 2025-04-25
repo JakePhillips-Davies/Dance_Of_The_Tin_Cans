@@ -1,4 +1,6 @@
+using System;
 using EditorAttributes;
+using Unity.VisualScripting;
 using UnityEngine;
 
 /*
@@ -16,13 +18,17 @@ public class ShipEmotionChip : MonoBehaviour
 
 
     [field: Title("Personality")]
-    [field: SerializeField, Range(0f, 1f)] public float recklessness  {get; private set;}
-    [field: SerializeField, Range(0f, 1f)] public float fearlessness  {get; private set;}
+    [field: SerializeField, Range(0.01f, 1f)] public float cautiousness  {get; private set;}
+    [field: SerializeField, Range(0.01f, 1f)] public float fearfulness  {get; private set;}
+    [field: SerializeField, Range(0.01f, 1f)] public float jumpiness  {get; private set;}
+    [field: SerializeField, Range(0.01f, 1f)] public float greediness  {get; private set;}
+    [field: SerializeField] public float normalMaxSpeed  {get; private set;}
 
     [field: Space(10)]
     [field: Title("Emotion")]
-    [field: SerializeField, ReadOnly] public float cautioun  {get; private set;}
+    [field: SerializeField, ReadOnly] public float caution  {get; private set;}
     [field: SerializeField, ReadOnly] public float fear  {get; private set;}
+    [field: SerializeField, ReadOnly] public float greed  {get; private set;}
 
 
     public SpaceShip ship {get; private set;}
@@ -52,6 +58,36 @@ public class ShipEmotionChip : MonoBehaviour
 
 
     public void CalculateEmotion() {
+
+        float obstacleDistVar = Mathf.Max(0f, 1 - (ship.closestObstacleDist/ship.avoidObstacleRange));
+        float hostileDistVar = Mathf.Max(0f, 1 - (ship.closestHostileDist/ship.searchRange));
+        float targetDistVar = Mathf.Max(0f, 1 - (ship.targetDist/ship.searchRange));
+        float weaponRangeVar = Mathf.Max(0f, 1 - (ship.weaponRange/ship.searchRange));
+        float healthVar = ship.health.healthChange/ship.health.maxHealth;
+
+        // Caution
+        float newCaution = cautiousness * (
+            obstacleDistVar * (2f/3f) +
+            hostileDistVar * (1f/3f) +
+            jumpiness * 10 * healthVar
+        );
+
+        // Fear
+        float newFear = fearfulness * (
+            obstacleDistVar * (1f/3f) +
+            hostileDistVar * (2f/3f) +
+            jumpiness * 20 * healthVar
+        );
+
+        float newGreed = greediness * (
+            (ship.targetDist > ship.weaponRange)? Mathf.Max(0.25f, targetDistVar) : weaponRangeVar - targetDistVar
+        );
+
+        caution = newCaution;
+        fear = (newFear > fear)? newFear : Mathf.Lerp(newFear, fear, 0.99f);
+        greed = newGreed;
+
+        ship.SetMaxSpeed(normalMaxSpeed + (fear * normalMaxSpeed) - (caution * normalMaxSpeed) + (greed * normalMaxSpeed));
 
     }
 

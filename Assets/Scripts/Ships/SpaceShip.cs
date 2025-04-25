@@ -20,11 +20,12 @@ public class SpaceShip : MonoBehaviour
 
     [field: Space(10)]
     [field: Title("Logged points/directions")]
-    [FoldoutGroup("", nameof(searchPoint), nameof(desiredMoveDir), nameof(targetDir), nameof(avoidObstacleDir), nameof(fleeDir))]
+    [FoldoutGroup("", nameof(searchPoint), nameof(desiredMoveDir), nameof(targetDir), nameof(avoidObstacleDir), nameof(fleeDir), nameof(closestObstacleDist), nameof(closestHostileDist), nameof(targetDist))]
     [SerializeField] private Void loggedInfoHolder;
     [field: SerializeField, ReadOnly, HideProperty] public Vector3 searchPoint { get; private set; }
     [field: SerializeField, ReadOnly, HideProperty] public Vector3 desiredMoveDir { get; private set; }
     [field: SerializeField, ReadOnly, HideProperty] public Vector3 targetDir { get; private set; }
+    [field: SerializeField, ReadOnly, HideProperty] public float targetDist { get; private set; }
     [field: SerializeField, ReadOnly, HideProperty] public Vector3 avoidObstacleDir { get; private set; }
     [field: SerializeField, ReadOnly, HideProperty] public float closestObstacleDist { get; private set; }
     [field: SerializeField, ReadOnly, HideProperty] public Vector3 fleeDir { get; private set; }
@@ -64,7 +65,7 @@ public class SpaceShip : MonoBehaviour
     private void OnDrawGizmos() {
         if (drawDesiredMoveDir) {
             Gizmos.color = Color.green;
-            Gizmos.DrawRay(transform.position, desiredMoveDir);
+            Gizmos.DrawRay(transform.position, desiredMoveDir * 40);
         }
 
         if (drawTargetDir) {
@@ -107,21 +108,32 @@ public class SpaceShip : MonoBehaviour
     public void SetDesiredMoveDir(Vector3 _desiredMoveDir) {
         desiredMoveDir = _desiredMoveDir;
     }
+
     public void SetTargetDir(Vector3 _targetDir) {
         targetDir = _targetDir;
     }
+    public void SetTargetDist(float _targetDist) {
+        targetDist = _targetDist;
+    }
+
     public void SetAvoidObstacleDir(Vector3 _avoidObstacleDir) {
         avoidObstacleDir = _avoidObstacleDir;
     }
     public void SetClosestObstacleDist(float _closestObstacleDist) {
         closestObstacleDist = _closestObstacleDist;
-    }    
+    }
+
     public void SetFleeDir(Vector3 _fleeDir) {
         fleeDir = _fleeDir;
     }
+    
     public void SetClosestHostileDist(float _closestHostileDist) {
         closestHostileDist = _closestHostileDist;
-    }    
+    }
+
+    public void SetMaxSpeed(float _maxSpeed) {
+        maxSpeed = _maxSpeed;
+    }
 
 
     #endregion

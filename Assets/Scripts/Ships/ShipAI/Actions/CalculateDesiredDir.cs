@@ -10,7 +10,23 @@ public class CalculateDesiredDir : Node
     }
 
     public override NodeState Evaluate() {
-        ship.SetDesiredMoveDir(ship.targetDir * ship.maxSpeed);
+        ship.shipEmotionChip.CalculateEmotion();
+        
+        Vector3 desiredDir = Vector3.zero;
+
+        desiredDir += ship.targetDir * ship.shipEmotionChip.greed/3;
+
+        desiredDir += ship.fleeDir * Mathf.Max(0f, 1 - (ship.closestHostileDist/ship.searchRange)) * (
+            3*ship.shipEmotionChip.fear +
+            ship.shipEmotionChip.caution
+        );
+
+        desiredDir += ship.avoidObstacleDir * Mathf.Max(0f, 1 - (ship.closestObstacleDist/ship.avoidObstacleRange)) * (
+            ship.shipEmotionChip.fear +
+            3*ship.shipEmotionChip.caution
+        );
+
+        ship.SetDesiredMoveDir(desiredDir.normalized * ship.maxSpeed);
 
         return NodeState.SUCCESS;
     }

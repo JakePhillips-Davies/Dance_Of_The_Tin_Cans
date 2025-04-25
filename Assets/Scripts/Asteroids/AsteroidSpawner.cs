@@ -1,22 +1,40 @@
 using System.Collections.Generic;
-using System.Drawing;
-using TreeEditor;
 using Unity.Mathematics;
 using UnityEngine;
 using Random = UnityEngine.Random;
 
 public class AsteroidSpawner : MonoBehaviour
 {
+    // I got this code from a forum post, not mine
+    public static float seed = 0;
+    public static float PerlinNoise3D(float x, float y, float z)
+    {
+        y += 1 + seed;
+        z += 2 + seed;
+        float xy = _perlin3DFixed(x, y);
+        float xz = _perlin3DFixed(x, z);
+        float yz = _perlin3DFixed(y, z);
+        float yx = _perlin3DFixed(y, x);
+        float zx = _perlin3DFixed(z, x);
+        float zy = _perlin3DFixed(z, y);
+
+        return xy * xz * yz * yx * zx * zy;
+    }
+
+    static float _perlin3DFixed(float a, float b)
+    {
+        return Mathf.Sin(Mathf.PI * Mathf.PerlinNoise(a, b));
+    }
+
     //
     [Header("Spawner stats")]
     [SerializeField] private int range;
-    private int spawnAttempts = 50000;
+    private int spawnAttempts = 15000;
     [SerializeField] private int noiseScale;
     [SerializeField, Range(0.0f, 2.0f)] private float density;
     [SerializeField, Range(0.1f, 2.0f)] private float fade;
 
     private List<Vector3> spawnPoints;
-    private Perlin pNoise = new();
 
     [Space(3)]
     [Header("Asteroid stats")]
@@ -50,10 +68,10 @@ public class AsteroidSpawner : MonoBehaviour
 
     private void PopulateSpawnPoints() {
         spawnPoints = new List<Vector3>(); // empty List
-        pNoise.SetSeed(Random.Range(1, 100000));
+        seed = Random.Range(1, 100000);
 
         if (usingDebugSeed){ // manually set the seeds for when debugging
-            pNoise.SetSeed(1111);
+            seed = 1111;
             Random.InitState(1111);
         }
 
@@ -61,7 +79,7 @@ public class AsteroidSpawner : MonoBehaviour
         {
             Vector3 attemptPoint = math.sqrt(Random.Range(0.0f, 1.0f)) * range * Random.onUnitSphere;
 
-            float noise = pNoise.Noise( //Get perlin noise at point
+            float noise = PerlinNoise3D( //Get perlin noise at point
                 attemptPoint.x / noiseScale,
                 attemptPoint.y / noiseScale,
                 attemptPoint.z / noiseScale

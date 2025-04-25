@@ -12,6 +12,7 @@ public class LogSearchDir : Node
     public override NodeState Evaluate() {
         try {
             ship.SetTargetDir((ship.searchPoint - ship.transform.position).normalized);
+            ship.SetTargetDist((ship.searchPoint - ship.transform.position).magnitude);
     
             return NodeState.SUCCESS;
         }
