@@ -2,7 +2,7 @@ using UnityEngine;
 using EditorAttributes;
 using Random = UnityEngine.Random;
 
-[RequireComponent(typeof(Rigidbody), typeof(Health))]
+[RequireComponent(typeof(Rigidbody), typeof(Health), typeof(ShipEmotionChip))]
 public class SpaceShip : MonoBehaviour
 {
 //--#
@@ -14,8 +14,9 @@ public class SpaceShip : MonoBehaviour
     [field: SerializeField] public float maxSpeed { get; private set; }
     [field: SerializeField] public float weaponRange { get; private set; }
     [field: SerializeField] public float weaponDamage { get; private set; }
-    [field: SerializeField] public float targetRange { get; private set; }
+    [field: SerializeField] public float scannerRange { get; private set; }
     [field: SerializeField] public float searchRange { get; private set; }
+    [field: SerializeField] public float avoidObstacleRange { get; private set; }
 
     [field: Space(10)]
     [field: Title("Logged points/directions")]
@@ -25,19 +26,24 @@ public class SpaceShip : MonoBehaviour
     [field: SerializeField, ReadOnly, HideProperty] public Vector3 desiredMoveDir { get; private set; }
     [field: SerializeField, ReadOnly, HideProperty] public Vector3 targetDir { get; private set; }
     [field: SerializeField, ReadOnly, HideProperty] public Vector3 avoidObstacleDir { get; private set; }
+    [field: SerializeField, ReadOnly, HideProperty] public float closestObstacleDist { get; private set; }
     [field: SerializeField, ReadOnly, HideProperty] public Vector3 fleeDir { get; private set; }
+    [field: SerializeField, ReadOnly, HideProperty] public float closestHostileDist { get; private set; }
 
     [field: Space(10)]
     [field: Title("Debug settings")]
-    [FoldoutGroup("", nameof(drawDesiredMoveDir), nameof(drawTargetDir), nameof(drawAvoidObstacleDir), nameof(drawFleeDir))]
+    [FoldoutGroup("", nameof(drawDesiredMoveDir), nameof(drawTargetDir), nameof(drawScannerRange), nameof(drawAvoidObstacleDir), nameof(drawAvoidObstacleRange), nameof(drawFleeDir))]
     [SerializeField] private Void debugHolder;
     [field: SerializeField, HideProperty] public bool drawDesiredMoveDir { get; private set; }
     [field: SerializeField, HideProperty] public bool drawTargetDir { get; private set; }
+    [field: SerializeField, HideProperty] public bool drawScannerRange { get; private set; }
     [field: SerializeField, HideProperty] public bool drawAvoidObstacleDir { get; private set; }
+    [field: SerializeField, HideProperty] public bool drawAvoidObstacleRange { get; private set; }
     [field: SerializeField, HideProperty] public bool drawFleeDir { get; private set; }
 
     public Rigidbody rb { get; private set; }
     public Health health { get; private set; }
+    public ShipEmotionChip shipEmotionChip { get; private set; }
 
     public Transform target { get; private set; } = null;
 
@@ -52,6 +58,7 @@ public class SpaceShip : MonoBehaviour
     private void Start() {
         rb = GetComponent<Rigidbody>();
         health = GetComponent<Health>();
+        shipEmotionChip = GetComponent<ShipEmotionChip>();
     }
 
     private void OnDrawGizmos() {
@@ -59,14 +66,23 @@ public class SpaceShip : MonoBehaviour
             Gizmos.color = Color.green;
             Gizmos.DrawRay(transform.position, desiredMoveDir);
         }
+
         if (drawTargetDir) {
             Gizmos.color = Color.blue;
             Gizmos.DrawRay(transform.position, targetDir * 40);
         }
+        if (drawScannerRange) {
+            Gizmos.DrawWireSphere(transform.position, scannerRange);
+        }
+
         if (drawAvoidObstacleDir) {
             Gizmos.color = Color.yellow;
             Gizmos.DrawRay(transform.position, avoidObstacleDir * 40);
         }
+        if (drawAvoidObstacleRange) {
+            Gizmos.DrawWireSphere(transform.position, avoidObstacleRange);
+        }
+
         if (drawFleeDir) {
             Gizmos.color = Color.red;
             Gizmos.DrawRay(transform.position, fleeDir * 40);
@@ -97,9 +113,15 @@ public class SpaceShip : MonoBehaviour
     public void SetAvoidObstacleDir(Vector3 _avoidObstacleDir) {
         avoidObstacleDir = _avoidObstacleDir;
     }
+    public void SetClosestObstacleDist(float _closestObstacleDist) {
+        closestObstacleDist = _closestObstacleDist;
+    }    
     public void SetFleeDir(Vector3 _fleeDir) {
         fleeDir = _fleeDir;
     }
+    public void SetClosestHostileDist(float _closestHostileDist) {
+        closestHostileDist = _closestHostileDist;
+    }    
 
 
     #endregion

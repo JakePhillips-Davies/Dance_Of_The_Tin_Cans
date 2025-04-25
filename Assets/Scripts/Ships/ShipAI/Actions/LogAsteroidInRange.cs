@@ -11,7 +11,7 @@ public class LogAsteroidInRange : Node
 
     public override NodeState Evaluate() {
         try {
-            Collider[] asteroidsInRange = Physics.OverlapSphere(ship.transform.position, ship.searchRange, LayerMask.NameToLayer("Asteroid"));
+            Collider[] asteroidsInRange = Physics.OverlapSphere(ship.transform.position, ship.searchRange, LayerMask.GetMask("Asteroid"));
             if (asteroidsInRange.Length == 0) return NodeState.FAILURE;
     
             int randomIndex = Random.Range(0, asteroidsInRange.Length);

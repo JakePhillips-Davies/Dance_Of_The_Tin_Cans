@@ -56,5 +56,11 @@
         "temp/": true,
         "Temp/": true
     },
-    "dotnet.defaultSolution": "Dance_Of_The_Tin_Cans.sln"
+    "dotnet.defaultSolution": "Dance_Of_The_Tin_Cans.sln",
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": false,
+        "scminput": false
+    }
 }

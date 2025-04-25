@@ -40,7 +40,7 @@ public class MinerBT : BehaviourTree.Tree
 
                         }),
                         
-                        new LogFleeDir(ship), // Log flee direction
+                        new LogFleeDir(ship, "Pirate"), // Log flee direction
                         new LogAvoidObstacleDir(ship), // Log avoid obstacle direction
 
                         new CalculateDesiredDir(ship), 

@@ -838,10 +838,11 @@ GameObject:
   - component: {fileID: 8705371768902527888}
   - component: {fileID: 3804770143970386591}
   - component: {fileID: 8705371768902527890}
+  - component: {fileID: 8705371768902527893}
   - component: {fileID: 8705371768902527889}
   - component: {fileID: 8705371768902527892}
   - component: {fileID: 8705371768902527891}
-  m_Layer: 0
+  m_Layer: 22
   m_Name: Pirate
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -923,11 +924,12 @@ GameObject:
   - component: {fileID: 2295350692878405280}
   - component: {fileID: 3627699633519422797}
   - component: {fileID: 3994094524444393682}
+  - component: {fileID: 3994094524444393686}
   - component: {fileID: 3994094524444393681}
   - component: {fileID: 3994094524444393685}
   - component: {fileID: 3994094524444393683}
   - component: {fileID: 3994094524444393684}
-  m_Layer: 0
+  m_Layer: 21
   m_Name: Miner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1055,16 +1057,21 @@ MonoBehaviour:
   <maxSpeed>k__BackingField: 400
   <weaponRange>k__BackingField: 250
   <weaponDamage>k__BackingField: 10
-  <targetRange>k__BackingField: 1000
+  <scannerRange>k__BackingField: 1250
   <searchRange>k__BackingField: 1000
+  <avoidObstacleRange>k__BackingField: 200
   <searchPoint>k__BackingField: {x: 0, y: 0, z: 0}
   <desiredMoveDir>k__BackingField: {x: 0, y: 0, z: 0}
   <targetDir>k__BackingField: {x: 0, y: 0, z: 0}
   <avoidObstacleDir>k__BackingField: {x: 0, y: 0, z: 0}
+  <closestObstacleDist>k__BackingField: 0
   <fleeDir>k__BackingField: {x: 0, y: 0, z: 0}
+  <closestHostileDist>k__BackingField: 0
   <drawDesiredMoveDir>k__BackingField: 1
   <drawTargetDir>k__BackingField: 1
+  <drawScannerRange>k__BackingField: 1
   <drawAvoidObstacleDir>k__BackingField: 1
+  <drawAvoidObstacleRange>k__BackingField: 1
   <drawFleeDir>k__BackingField: 1
 --- !u!54 &3994094524444393682
 Rigidbody:
@@ -1140,6 +1147,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <maxHealth>k__BackingField: 1000
+--- !u!114 &3994094524444393686
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3451572504591519404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0363b993fa80b274c82d868945e31cdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <recklessness>k__BackingField: 0
+  <fearlessness>k__BackingField: 0
+  <cautioun>k__BackingField: 0
+  <fear>k__BackingField: 0
 --- !u!4 &4279697131049108002
 Transform:
   m_ObjectHideFlags: 0
@@ -1197,10 +1220,11 @@ GameObject:
   - component: {fileID: 1180868791527736482}
   - component: {fileID: 8802091314706439741}
   - component: {fileID: 8802091314706439743}
+  - component: {fileID: 8802091314706439746}
   - component: {fileID: 8802091314706439742}
   - component: {fileID: 8802091314706439745}
   - component: {fileID: 8802091314706439744}
-  m_Layer: 0
+  m_Layer: 23
   m_Name: BountyHunter
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1231,16 +1255,21 @@ MonoBehaviour:
   <maxSpeed>k__BackingField: 400
   <weaponRange>k__BackingField: 250
   <weaponDamage>k__BackingField: 10
-  <targetRange>k__BackingField: 1000
+  <scannerRange>k__BackingField: 0
   <searchRange>k__BackingField: 0
+  <avoidObstacleRange>k__BackingField: 0
   <searchPoint>k__BackingField: {x: 0, y: 0, z: 0}
   <desiredMoveDir>k__BackingField: {x: 0, y: 0, z: 0}
   <targetDir>k__BackingField: {x: 0, y: 0, z: 0}
   <avoidObstacleDir>k__BackingField: {x: 0, y: 0, z: 0}
+  <closestObstacleDist>k__BackingField: 0
   <fleeDir>k__BackingField: {x: 0, y: 0, z: 0}
+  <closestHostileDist>k__BackingField: 0
   <drawDesiredMoveDir>k__BackingField: 0
   <drawTargetDir>k__BackingField: 0
+  <drawScannerRange>k__BackingField: 0
   <drawAvoidObstacleDir>k__BackingField: 0
+  <drawAvoidObstacleRange>k__BackingField: 0
   <drawFleeDir>k__BackingField: 0
 --- !u!54 &8705371768902527890
 Rigidbody:
@@ -1304,6 +1333,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <maxHealth>k__BackingField: 1000
+--- !u!114 &8705371768902527893
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 804128941157995176}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0363b993fa80b274c82d868945e31cdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <recklessness>k__BackingField: 0
+  <fearlessness>k__BackingField: 0
+  <cautioun>k__BackingField: 0
+  <fear>k__BackingField: 0
 --- !u!23 &8802091314706439741
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1365,16 +1410,21 @@ MonoBehaviour:
   <maxSpeed>k__BackingField: 400
   <weaponRange>k__BackingField: 250
   <weaponDamage>k__BackingField: 10
-  <targetRange>k__BackingField: 1000
+  <scannerRange>k__BackingField: 0
   <searchRange>k__BackingField: 0
+  <avoidObstacleRange>k__BackingField: 0
   <searchPoint>k__BackingField: {x: 0, y: 0, z: 0}
   <desiredMoveDir>k__BackingField: {x: 0, y: 0, z: 0}
   <targetDir>k__BackingField: {x: 0, y: 0, z: 0}
   <avoidObstacleDir>k__BackingField: {x: 0, y: 0, z: 0}
+  <closestObstacleDist>k__BackingField: 0
   <fleeDir>k__BackingField: {x: 0, y: 0, z: 0}
+  <closestHostileDist>k__BackingField: 0
   <drawDesiredMoveDir>k__BackingField: 0
   <drawTargetDir>k__BackingField: 0
+  <drawScannerRange>k__BackingField: 0
   <drawAvoidObstacleDir>k__BackingField: 0
+  <drawAvoidObstacleRange>k__BackingField: 0
   <drawFleeDir>k__BackingField: 0
 --- !u!54 &8802091314706439743
 Rigidbody:
@@ -1438,6 +1488,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   <maxHealth>k__BackingField: 1000
+--- !u!114 &8802091314706439746
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7390931807617661565}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0363b993fa80b274c82d868945e31cdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  <recklessness>k__BackingField: 0
+  <fearlessness>k__BackingField: 0
+  <cautioun>k__BackingField: 0
+  <fear>k__BackingField: 0
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
