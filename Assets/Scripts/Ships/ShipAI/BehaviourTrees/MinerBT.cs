@@ -18,6 +18,18 @@ public class MinerBT : BehaviourTree.Tree
                             new LogSearchPoint(ship)
 
                         }),
+                        new Sequence(new List<Node>() { // Run a timer
+
+                            new CheckIsTargetLocked(ship),
+                            new Timer(ship),
+                            new Selector(new List<Node>() { // Re-check for new target
+
+                                new LogTargetInRange(ship, "Asteroid"),
+                                new LogSearchPoint(ship)
+
+                            })
+
+                        }),
                         new Sequence(new List<Node>() { // Handle mining
 
                             new CheckTargetInWeaponRange(ship),

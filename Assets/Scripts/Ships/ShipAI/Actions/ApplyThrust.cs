@@ -18,6 +18,9 @@ public class ApplyThrust : Node
 
         rb.AddForce(steeringDir, ForceMode.Impulse);
 
+        Vector3 newLookDirection = Vector3.RotateTowards(ship.transform.forward, ship.desiredMoveDir, 0.01f, 0.0f);
+        ship.transform.rotation = Quaternion.LookRotation(newLookDirection);
+
         return NodeState.RUNNING;
     }
 }

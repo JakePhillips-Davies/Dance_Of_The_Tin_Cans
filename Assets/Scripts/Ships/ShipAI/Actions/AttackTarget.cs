@@ -14,13 +14,6 @@ public class AttackTarget : Node
             return NodeState.FAILURE;
         }
 
-        if (ship.target.TryGetComponent<Health>(out Health targetHealth)) {
-            targetHealth.Damage(ship.weaponDamage);
-        }
-        else {
-            return NodeState.FAILURE;
-        }
-
-        return NodeState.SUCCESS;
+        return ship.gun.Shoot(ship.target.transform.position - ship.gun.transform.position) ? NodeState.SUCCESS : NodeState.FAILURE;
     }
 }

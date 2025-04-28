@@ -16,7 +16,7 @@ public class CheckTargetInWeaponRange : Node
 
         float distance = (ship.target.position - ship.transform.position).magnitude; 
 
-        if (distance <= ship.weaponRange) {
+        if (distance <= ship.gun.range) {
             return NodeState.SUCCESS;
         }
         else {

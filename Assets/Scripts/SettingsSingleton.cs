@@ -1,3 +1,4 @@
+using EditorAttributes;
 using UnityEngine;
 
 /*
@@ -15,9 +16,13 @@ public class SettingsSingleton : MonoBehaviour
 
     public static SettingsSingleton Get {get; private set; }
 
-    [Header("Damage")]
+    [field: Title("Damage")]
     [field: SerializeField] public float collisionDamageScale  {get; private set;}
     [field: SerializeField] public float collisionDamagePower  {get; private set;}
+
+    [field: Space(10)]
+    [field: Title("laser")]
+    [field: SerializeField] public Material laserMat  {get; private set;}
 
 
     #endregion

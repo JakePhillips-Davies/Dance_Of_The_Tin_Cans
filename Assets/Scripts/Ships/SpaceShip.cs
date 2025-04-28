@@ -12,8 +12,6 @@ public class SpaceShip : MonoBehaviour
     [field: Title("Variables")]
     [field: SerializeField] public float engineForceMax { get; private set; }
     [field: SerializeField] public float maxSpeed { get; private set; }
-    [field: SerializeField] public float weaponRange { get; private set; }
-    [field: SerializeField] public float weaponDamage { get; private set; }
     [field: SerializeField] public float scannerRange { get; private set; }
     [field: SerializeField] public float searchRange { get; private set; }
     [field: SerializeField] public float avoidObstacleRange { get; private set; }
@@ -45,6 +43,7 @@ public class SpaceShip : MonoBehaviour
     public Rigidbody rb { get; private set; }
     public Health health { get; private set; }
     public ShipEmotionChip shipEmotionChip { get; private set; }
+    public ShipGun gun { get; private set; }
 
     public Transform target { get; private set; } = null;
 
@@ -60,6 +59,7 @@ public class SpaceShip : MonoBehaviour
         rb = GetComponent<Rigidbody>();
         health = GetComponent<Health>();
         shipEmotionChip = GetComponent<ShipEmotionChip>();
+        gun = GetComponent<ShipGun>();
     }
 
     private void OnDrawGizmos() {

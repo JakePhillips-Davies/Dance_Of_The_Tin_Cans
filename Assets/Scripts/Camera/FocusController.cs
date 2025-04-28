@@ -30,6 +30,10 @@ public class FocusController : MonoBehaviour
         UpdateObjectList();
     }
 
+    private void FixedUpdate() {
+        UpdateObjectList();
+    }
+
     private void Update() {
         focusName = GetFocus().name;
     }
