@@ -73,7 +73,7 @@ public class ShipEmotionChip : MonoBehaviour
         );
 
         // Fear
-        float newFear = fearfulness * (
+        float newFear = fearfulness * (3 - 2 * (ship.health.currentHealth / ship.health.maxHealth)) * (
             obstacleDistVar * (1f/3f) +
             hostileDistVar * (2f/3f) +
             jumpiness * 20 * healthVar

@@ -1319,12 +1319,12 @@ MonoBehaviour:
   <closestObstacleDist>k__BackingField: 0
   <fleeDir>k__BackingField: {x: 0, y: 0, z: 0}
   <closestHostileDist>k__BackingField: 0
-  <drawDesiredMoveDir>k__BackingField: 1
-  <drawTargetDir>k__BackingField: 1
-  <drawScannerRange>k__BackingField: 1
-  <drawAvoidObstacleDir>k__BackingField: 1
-  <drawAvoidObstacleRange>k__BackingField: 1
-  <drawFleeDir>k__BackingField: 1
+  <drawDesiredMoveDir>k__BackingField: 0
+  <drawTargetDir>k__BackingField: 0
+  <drawScannerRange>k__BackingField: 0
+  <drawAvoidObstacleDir>k__BackingField: 0
+  <drawAvoidObstacleRange>k__BackingField: 0
+  <drawFleeDir>k__BackingField: 0
 --- !u!54 &8705371768902527890
 Rigidbody:
   m_ObjectHideFlags: 0
