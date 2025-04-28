@@ -66,7 +66,7 @@ public class ShipEmotionChip : MonoBehaviour
         float healthVar = ship.health.healthChange/ship.health.maxHealth;
 
         // Caution
-        float newCaution = cautiousness * (
+        float newCaution = cautiousness * (3 - 2 * (ship.health.currentHealth / ship.health.maxHealth)) * (
             obstacleDistVar * (2f/3f) +
             hostileDistVar * (1f/3f) +
             jumpiness * 10 * healthVar
