@@ -15,12 +15,16 @@ public class OrbitCamera : MonoBehaviour
 
     private float camDistance;
 
+    private Vector3 focusPos;
+
     void Start() {
         yaw = transform.eulerAngles.y;
         pitch = transform.eulerAngles.x;
     }
 
     void Update() {
+        if (focusController.GetFocus() != null) focusPos = focusController.GetFocus().position;
+
         if (Input.GetKey(moveKey)) {
             float mouseX = Input.GetAxis("Mouse X");
             float mouseY = Input.GetAxis("Mouse Y");
@@ -32,12 +36,12 @@ public class OrbitCamera : MonoBehaviour
             transform.rotation = Quaternion.Euler(pitch, yaw, 0);
         }
 
-        camDistance = (transform.position- focusController.GetFocus().position).magnitude;
+        camDistance = (transform.position - focusPos).magnitude;
 
         orbitRadius -= Mathf.Clamp(camDistance, 0.05f, 100000) * Input.mouseScrollDelta.y * scrollSensitivity / 10;
         orbitRadius = Mathf.Clamp(orbitRadius, 0, 100000);
 
-        transform.position = -transform.forward * orbitRadius + focusController.GetFocus().position;
+        transform.position = -transform.forward * orbitRadius + focusPos;
     }
 
 }

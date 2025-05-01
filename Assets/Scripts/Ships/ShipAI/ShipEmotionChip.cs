@@ -70,7 +70,7 @@ public class ShipEmotionChip : MonoBehaviour
         float hostileDistVar = Mathf.Max(0f, 1 - (ship.closestHostileDist/ship.searchRange));
         float targetDistVar = Mathf.Max(0f, 1 - (ship.targetDist/ship.searchRange));
         float weaponRangeVar = Mathf.Max(0f, 1 - (ship.gun.range/ship.searchRange));
-        float healthVar = 100 * ship.health.healthChange/ship.health.maxHealth;
+        float healthVar = 100 * -ship.health.healthChange/ship.health.maxHealth;
 
         // Caution
         float newCaution = cautiousness * (3 - 2 * (ship.health.currentHealth / ship.health.maxHealth)) * (
@@ -90,7 +90,7 @@ public class ShipEmotionChip : MonoBehaviour
             (targetDistVar < weaponRangeVar) ? 
                 Mathf.Max(0.25f, targetDistVar)
             :
-                Mathf.Max(0.0f, weaponRangeVar - (weaponRangeVar * (1 - ((1 - targetDistVar) / (1 - weaponRangeVar))) * 2f))
+                Mathf.Max(0.05f, weaponRangeVar - (weaponRangeVar * (1 - ((1 - targetDistVar) / (1 - weaponRangeVar))) * 2f))
         );
 
         caution = newCaution;

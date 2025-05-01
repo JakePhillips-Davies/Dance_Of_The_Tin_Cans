@@ -10,7 +10,7 @@ public class LogSearchPoint : Node
     }
 
     public override NodeState Evaluate() {
-        if (((ship.searchPoint - ship.transform.position).magnitude <= 100) || ((ship.searchPoint - ship.transform.position).magnitude >= ship.searchRange * 1.5f)) {
+        if (((ship.searchPoint - ship.transform.position).magnitude <= 100) || ((ship.searchPoint - ship.transform.position).magnitude >= ship.searchRange * 1.5f) || (ship.searchPoint == Vector3.zero)) {
             Vector3 searchPoint = ship.transform.position + (1.25f * ship.searchRange * Random.onUnitSphere);
 
             if (searchPoint.magnitude > 19000) searchPoint = ship.transform.position - ship.transform.position.normalized * ship.searchRange; // if outside a certain distance from 0, move back inwards

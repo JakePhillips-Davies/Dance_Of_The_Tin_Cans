@@ -11,6 +11,7 @@ public class FocusController : MonoBehaviour
     public Transform[] objectList { get; private set; }
     public int focus = 0;
     public string focusName;
+    private Transform cachedFocus;
     
     private void Awake() {
         UpdateObjectList();
@@ -18,26 +19,40 @@ public class FocusController : MonoBehaviour
         if(ui != null) {
             ui.rootVisualElement.Q<TextField>("Focus").dataSource = this;
             ui.rootVisualElement.Q<Button>("Previous").clickable.clicked += () => {
-                if(focus > 0) focus--;
+                focus--;
+
+                if(focus < 0) focus = 0;
+                else if(focus > objectList.Length-1) focus = objectList.Length-1;
+
+                cachedFocus = objectList[focus];
             };
             ui.rootVisualElement.Q<Button>("Next").clickable.clicked += () => {
-                if(focus < objectList.Length-1) focus++;
+                focus++;
+
+                if(focus > objectList.Length-1) focus = objectList.Length-1;
+                else if(focus < 0) focus = 0;
+
+                cachedFocus = objectList[focus];
             };
         }
         
+        cachedFocus = objectList[focus];
     }
     private void OnValidate() {
         UpdateObjectList();
+        cachedFocus = objectList[focus];
     }
 
     private void FixedUpdate() {
         UpdateObjectList();
-        if (focus >= objectList.Length) focus = objectList.Length-1;
-        objectList[focus].GetComponent<SpaceShip>().DebugDirs(true); // Game specific!
+        
+        if (GetFocus() != null)
+            GetFocus().GetComponent<SpaceShip>().DebugDirs(true);
     }
 
     private void Update() {
-        focusName = GetFocus().name;
+        if (GetFocus() != null)
+            focusName = GetFocus().name;
     }
 
     public void UpdateObjectList() {
@@ -52,6 +67,6 @@ public class FocusController : MonoBehaviour
     }
 
     public Transform GetFocus() {
-        return objectList[focus];
+        return cachedFocus;
     }
 }
