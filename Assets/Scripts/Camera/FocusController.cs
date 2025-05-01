@@ -18,7 +18,7 @@ public class FocusController : MonoBehaviour
         if(ui != null) {
             ui.rootVisualElement.Q<TextField>("Focus").dataSource = this;
             ui.rootVisualElement.Q<Button>("Previous").clickable.clicked += () => {
-                if(focus > 0) focus--; 
+                if(focus > 0) focus--;
             };
             ui.rootVisualElement.Q<Button>("Next").clickable.clicked += () => {
                 if(focus < objectList.Length-1) focus++;
@@ -32,6 +32,8 @@ public class FocusController : MonoBehaviour
 
     private void FixedUpdate() {
         UpdateObjectList();
+        if (focus >= objectList.Length) focus = objectList.Length-1;
+        objectList[focus].GetComponent<SpaceShip>().DebugDirs(true); // Game specific!
     }
 
     private void Update() {
@@ -41,8 +43,9 @@ public class FocusController : MonoBehaviour
     public void UpdateObjectList() {
         List<Transform> tempList = new();
 
-        foreach (SpaceShip ship in GetComponentsInChildren<SpaceShip>()) {
+        foreach (SpaceShip ship in GetComponentsInChildren<SpaceShip>()) { // Game specific!
             tempList.Add(ship.transform);
+            ship.DebugDirs(false); // Game specific!
         }
 
         objectList = tempList.ToArray();

@@ -158,7 +158,7 @@ Transform:
   m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1054982249}
+  m_Father: {fileID: 703161168}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &23057773
 MonoBehaviour:
@@ -233,12 +233,12 @@ MonoBehaviour:
   <closestObstacleDist>k__BackingField: 0
   <fleeDir>k__BackingField: {x: 0, y: 0, z: 0}
   <closestHostileDist>k__BackingField: 0
-  <drawDesiredMoveDir>k__BackingField: 1
-  <drawTargetDir>k__BackingField: 1
+  <drawDesiredMoveDir>k__BackingField: 0
+  <drawTargetDir>k__BackingField: 0
   <drawScannerRange>k__BackingField: 0
-  <drawAvoidObstacleDir>k__BackingField: 1
+  <drawAvoidObstacleDir>k__BackingField: 0
   <drawAvoidObstacleRange>k__BackingField: 0
-  <drawFleeDir>k__BackingField: 1
+  <drawFleeDir>k__BackingField: 0
 --- !u!114 &23057777
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -353,11 +353,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f71ea32676e6cfd4485404bb85ee9bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <damage>k__BackingField: 10
+  <damage>k__BackingField: 30
   <range>k__BackingField: 600
-  <cooldownTimer>k__BackingField: 0.05
+  <cooldownTimer>k__BackingField: 0.1
+  <laserFadeTime>k__BackingField: 0.075
   <randomAimOffsetMax>k__BackingField: 0.035
-  <laserMat>k__BackingField: {fileID: 2100000, guid: e5afdf69471a731448a7ccbb105788f2, type: 2}
 --- !u!120 &23057782
 LineRenderer:
   serializedVersion: 2
@@ -504,7 +504,7 @@ Transform:
   m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1054982249}
+  m_Father: {fileID: 703161168}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &28506558
 MonoBehaviour:
@@ -518,11 +518,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f71ea32676e6cfd4485404bb85ee9bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <damage>k__BackingField: 10
+  <damage>k__BackingField: 30
   <range>k__BackingField: 600
-  <cooldownTimer>k__BackingField: 0.05
+  <cooldownTimer>k__BackingField: 0.1
+  <laserFadeTime>k__BackingField: 0.075
   <randomAimOffsetMax>k__BackingField: 0.035
-  <laserMat>k__BackingField: {fileID: 2100000, guid: e5afdf69471a731448a7ccbb105788f2, type: 2}
 --- !u!120 &28506559
 LineRenderer:
   serializedVersion: 2
@@ -703,12 +703,12 @@ MonoBehaviour:
   <closestObstacleDist>k__BackingField: 0
   <fleeDir>k__BackingField: {x: 0, y: 0, z: 0}
   <closestHostileDist>k__BackingField: 0
-  <drawDesiredMoveDir>k__BackingField: 1
-  <drawTargetDir>k__BackingField: 1
+  <drawDesiredMoveDir>k__BackingField: 0
+  <drawTargetDir>k__BackingField: 0
   <drawScannerRange>k__BackingField: 0
-  <drawAvoidObstacleDir>k__BackingField: 1
+  <drawAvoidObstacleDir>k__BackingField: 0
   <drawAvoidObstacleRange>k__BackingField: 0
-  <drawFleeDir>k__BackingField: 1
+  <drawFleeDir>k__BackingField: 0
 --- !u!114 &28506564
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -849,7 +849,7 @@ Transform:
   m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1054982249}
+  m_Father: {fileID: 703161168}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &63010605
 MonoBehaviour:
@@ -863,11 +863,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f71ea32676e6cfd4485404bb85ee9bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <damage>k__BackingField: 10
+  <damage>k__BackingField: 30
   <range>k__BackingField: 600
-  <cooldownTimer>k__BackingField: 0.05
+  <cooldownTimer>k__BackingField: 0.1
+  <laserFadeTime>k__BackingField: 0.075
   <randomAimOffsetMax>k__BackingField: 0.035
-  <laserMat>k__BackingField: {fileID: 2100000, guid: 2a7c2d2237b4a5849872995bd9d27d66, type: 2}
 --- !u!120 &63010606
 LineRenderer:
   serializedVersion: 2
@@ -1036,12 +1036,12 @@ MonoBehaviour:
   <closestObstacleDist>k__BackingField: 0
   <fleeDir>k__BackingField: {x: 0, y: 0, z: 0}
   <closestHostileDist>k__BackingField: 0
-  <drawDesiredMoveDir>k__BackingField: 1
-  <drawTargetDir>k__BackingField: 1
+  <drawDesiredMoveDir>k__BackingField: 0
+  <drawTargetDir>k__BackingField: 0
   <drawScannerRange>k__BackingField: 0
-  <drawAvoidObstacleDir>k__BackingField: 1
+  <drawAvoidObstacleDir>k__BackingField: 0
   <drawAvoidObstacleRange>k__BackingField: 0
-  <drawFleeDir>k__BackingField: 1
+  <drawFleeDir>k__BackingField: 0
 --- !u!114 &63010610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1304,7 +1304,7 @@ Transform:
   m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1054982249}
+  m_Father: {fileID: 703161168}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &175953899
 MonoBehaviour:
@@ -1379,12 +1379,12 @@ MonoBehaviour:
   <closestObstacleDist>k__BackingField: 0
   <fleeDir>k__BackingField: {x: 0, y: 0, z: 0}
   <closestHostileDist>k__BackingField: 0
-  <drawDesiredMoveDir>k__BackingField: 1
-  <drawTargetDir>k__BackingField: 1
+  <drawDesiredMoveDir>k__BackingField: 0
+  <drawTargetDir>k__BackingField: 0
   <drawScannerRange>k__BackingField: 0
-  <drawAvoidObstacleDir>k__BackingField: 1
+  <drawAvoidObstacleDir>k__BackingField: 0
   <drawAvoidObstacleRange>k__BackingField: 0
-  <drawFleeDir>k__BackingField: 1
+  <drawFleeDir>k__BackingField: 0
 --- !u!114 &175953903
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1499,11 +1499,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f71ea32676e6cfd4485404bb85ee9bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <damage>k__BackingField: 10
+  <damage>k__BackingField: 30
   <range>k__BackingField: 600
-  <cooldownTimer>k__BackingField: 0.05
+  <cooldownTimer>k__BackingField: 0.1
+  <laserFadeTime>k__BackingField: 0.075
   <randomAimOffsetMax>k__BackingField: 0.035
-  <laserMat>k__BackingField: {fileID: 2100000, guid: e5afdf69471a731448a7ccbb105788f2, type: 2}
 --- !u!120 &175953908
 LineRenderer:
   serializedVersion: 2
@@ -1650,7 +1650,7 @@ Transform:
   m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1054982249}
+  m_Father: {fileID: 703161168}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &231201307
 MonoBehaviour:
@@ -1664,11 +1664,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f71ea32676e6cfd4485404bb85ee9bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <damage>k__BackingField: 10
+  <damage>k__BackingField: 30
   <range>k__BackingField: 600
-  <cooldownTimer>k__BackingField: 0.05
+  <cooldownTimer>k__BackingField: 0.1
+  <laserFadeTime>k__BackingField: 0.075
   <randomAimOffsetMax>k__BackingField: 0.035
-  <laserMat>k__BackingField: {fileID: 2100000, guid: e5afdf69471a731448a7ccbb105788f2, type: 2}
 --- !u!120 &231201308
 LineRenderer:
   serializedVersion: 2
@@ -1849,12 +1849,12 @@ MonoBehaviour:
   <closestObstacleDist>k__BackingField: 0
   <fleeDir>k__BackingField: {x: 0, y: 0, z: 0}
   <closestHostileDist>k__BackingField: 0
-  <drawDesiredMoveDir>k__BackingField: 1
-  <drawTargetDir>k__BackingField: 1
+  <drawDesiredMoveDir>k__BackingField: 0
+  <drawTargetDir>k__BackingField: 0
   <drawScannerRange>k__BackingField: 0
-  <drawAvoidObstacleDir>k__BackingField: 1
+  <drawAvoidObstacleDir>k__BackingField: 0
   <drawAvoidObstacleRange>k__BackingField: 0
-  <drawFleeDir>k__BackingField: 1
+  <drawFleeDir>k__BackingField: 0
 --- !u!114 &231201313
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2164,6 +2164,59 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &703161167
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 703161168}
+  m_Layer: 0
+  m_Name: Ships
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &703161168
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 703161167}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 4279697131049108002}
+  - {fileID: 63010604}
+  - {fileID: 1394144217}
+  - {fileID: 2091857936}
+  - {fileID: 3994094524444393680}
+  - {fileID: 993258879}
+  - {fileID: 231201306}
+  - {fileID: 23057772}
+  - {fileID: 1319356984}
+  - {fileID: 28506557}
+  - {fileID: 1207533990}
+  - {fileID: 790838332}
+  - {fileID: 1330745045}
+  - {fileID: 175953898}
+  - {fileID: 1286634945}
+  - {fileID: 918757277}
+  - {fileID: 6333778144109974157}
+  - {fileID: 1046206781}
+  - {fileID: 824596619}
+  - {fileID: 1336325626}
+  - {fileID: 1612513723}
+  - {fileID: 1092210024}
+  m_Father: {fileID: 1054982249}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &790838331
 GameObject:
   m_ObjectHideFlags: 0
@@ -2203,7 +2256,7 @@ Transform:
   m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1054982249}
+  m_Father: {fileID: 703161168}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &790838333
 MonoBehaviour:
@@ -2217,11 +2270,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f71ea32676e6cfd4485404bb85ee9bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <damage>k__BackingField: 10
+  <damage>k__BackingField: 30
   <range>k__BackingField: 600
-  <cooldownTimer>k__BackingField: 0.05
+  <cooldownTimer>k__BackingField: 0.1
+  <laserFadeTime>k__BackingField: 0.075
   <randomAimOffsetMax>k__BackingField: 0.035
-  <laserMat>k__BackingField: {fileID: 2100000, guid: e5afdf69471a731448a7ccbb105788f2, type: 2}
 --- !u!120 &790838334
 LineRenderer:
   serializedVersion: 2
@@ -2402,12 +2455,12 @@ MonoBehaviour:
   <closestObstacleDist>k__BackingField: 0
   <fleeDir>k__BackingField: {x: 0, y: 0, z: 0}
   <closestHostileDist>k__BackingField: 0
-  <drawDesiredMoveDir>k__BackingField: 1
-  <drawTargetDir>k__BackingField: 1
+  <drawDesiredMoveDir>k__BackingField: 0
+  <drawTargetDir>k__BackingField: 0
   <drawScannerRange>k__BackingField: 0
-  <drawAvoidObstacleDir>k__BackingField: 1
+  <drawAvoidObstacleDir>k__BackingField: 0
   <drawAvoidObstacleRange>k__BackingField: 0
-  <drawFleeDir>k__BackingField: 1
+  <drawFleeDir>k__BackingField: 0
 --- !u!114 &790838339
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2549,7 +2602,7 @@ Transform:
   m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1054982249}
+  m_Father: {fileID: 703161168}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &824596620
 MonoBehaviour:
@@ -2563,11 +2616,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f71ea32676e6cfd4485404bb85ee9bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <damage>k__BackingField: 10
+  <damage>k__BackingField: 30
   <range>k__BackingField: 600
-  <cooldownTimer>k__BackingField: 0.05
+  <cooldownTimer>k__BackingField: 0.1
+  <laserFadeTime>k__BackingField: 0.075
   <randomAimOffsetMax>k__BackingField: 0.035
-  <laserMat>k__BackingField: {fileID: 2100000, guid: 8a22b1182895f724db3e234ce9175f7b, type: 2}
 --- !u!120 &824596621
 LineRenderer:
   serializedVersion: 2
@@ -2748,12 +2801,12 @@ MonoBehaviour:
   <closestObstacleDist>k__BackingField: 0
   <fleeDir>k__BackingField: {x: 0, y: 0, z: 0}
   <closestHostileDist>k__BackingField: 0
-  <drawDesiredMoveDir>k__BackingField: 1
-  <drawTargetDir>k__BackingField: 1
+  <drawDesiredMoveDir>k__BackingField: 0
+  <drawTargetDir>k__BackingField: 0
   <drawScannerRange>k__BackingField: 0
-  <drawAvoidObstacleDir>k__BackingField: 1
+  <drawAvoidObstacleDir>k__BackingField: 0
   <drawAvoidObstacleRange>k__BackingField: 0
-  <drawFleeDir>k__BackingField: 1
+  <drawFleeDir>k__BackingField: 0
 --- !u!114 &824596626
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2944,7 +2997,7 @@ Transform:
   m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1054982249}
+  m_Father: {fileID: 703161168}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &918757278
 MonoBehaviour:
@@ -2958,11 +3011,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f71ea32676e6cfd4485404bb85ee9bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <damage>k__BackingField: 10
+  <damage>k__BackingField: 30
   <range>k__BackingField: 600
-  <cooldownTimer>k__BackingField: 0.05
+  <cooldownTimer>k__BackingField: 0.1
+  <laserFadeTime>k__BackingField: 0.075
   <randomAimOffsetMax>k__BackingField: 0.035
-  <laserMat>k__BackingField: {fileID: 2100000, guid: e5afdf69471a731448a7ccbb105788f2, type: 2}
 --- !u!120 &918757279
 LineRenderer:
   serializedVersion: 2
@@ -3143,12 +3196,12 @@ MonoBehaviour:
   <closestObstacleDist>k__BackingField: 0
   <fleeDir>k__BackingField: {x: 0, y: 0, z: 0}
   <closestHostileDist>k__BackingField: 0
-  <drawDesiredMoveDir>k__BackingField: 1
-  <drawTargetDir>k__BackingField: 1
+  <drawDesiredMoveDir>k__BackingField: 0
+  <drawTargetDir>k__BackingField: 0
   <drawScannerRange>k__BackingField: 0
-  <drawAvoidObstacleDir>k__BackingField: 1
+  <drawAvoidObstacleDir>k__BackingField: 0
   <drawAvoidObstacleRange>k__BackingField: 0
-  <drawFleeDir>k__BackingField: 1
+  <drawFleeDir>k__BackingField: 0
 --- !u!114 &918757284
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3290,7 +3343,7 @@ Transform:
   m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1054982249}
+  m_Father: {fileID: 703161168}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &993258880
 MonoBehaviour:
@@ -3304,11 +3357,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f71ea32676e6cfd4485404bb85ee9bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <damage>k__BackingField: 10
+  <damage>k__BackingField: 30
   <range>k__BackingField: 600
-  <cooldownTimer>k__BackingField: 0.05
+  <cooldownTimer>k__BackingField: 0.1
+  <laserFadeTime>k__BackingField: 0.075
   <randomAimOffsetMax>k__BackingField: 0.035
-  <laserMat>k__BackingField: {fileID: 2100000, guid: e5afdf69471a731448a7ccbb105788f2, type: 2}
 --- !u!120 &993258881
 LineRenderer:
   serializedVersion: 2
@@ -3489,12 +3542,12 @@ MonoBehaviour:
   <closestObstacleDist>k__BackingField: 0
   <fleeDir>k__BackingField: {x: 0, y: 0, z: 0}
   <closestHostileDist>k__BackingField: 0
-  <drawDesiredMoveDir>k__BackingField: 1
-  <drawTargetDir>k__BackingField: 1
+  <drawDesiredMoveDir>k__BackingField: 0
+  <drawTargetDir>k__BackingField: 0
   <drawScannerRange>k__BackingField: 0
-  <drawAvoidObstacleDir>k__BackingField: 1
+  <drawAvoidObstacleDir>k__BackingField: 0
   <drawAvoidObstacleRange>k__BackingField: 0
-  <drawFleeDir>k__BackingField: 1
+  <drawFleeDir>k__BackingField: 0
 --- !u!114 &993258886
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3636,7 +3689,7 @@ Transform:
   m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1054982249}
+  m_Father: {fileID: 703161168}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1046206782
 MonoBehaviour:
@@ -3650,11 +3703,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f71ea32676e6cfd4485404bb85ee9bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <damage>k__BackingField: 10
+  <damage>k__BackingField: 30
   <range>k__BackingField: 600
-  <cooldownTimer>k__BackingField: 0.05
+  <cooldownTimer>k__BackingField: 0.1
+  <laserFadeTime>k__BackingField: 0.075
   <randomAimOffsetMax>k__BackingField: 0.035
-  <laserMat>k__BackingField: {fileID: 2100000, guid: 8a22b1182895f724db3e234ce9175f7b, type: 2}
 --- !u!120 &1046206783
 LineRenderer:
   serializedVersion: 2
@@ -3835,12 +3888,12 @@ MonoBehaviour:
   <closestObstacleDist>k__BackingField: 0
   <fleeDir>k__BackingField: {x: 0, y: 0, z: 0}
   <closestHostileDist>k__BackingField: 0
-  <drawDesiredMoveDir>k__BackingField: 1
-  <drawTargetDir>k__BackingField: 1
+  <drawDesiredMoveDir>k__BackingField: 0
+  <drawTargetDir>k__BackingField: 0
   <drawScannerRange>k__BackingField: 0
-  <drawAvoidObstacleDir>k__BackingField: 1
+  <drawAvoidObstacleDir>k__BackingField: 0
   <drawAvoidObstacleRange>k__BackingField: 0
-  <drawFleeDir>k__BackingField: 1
+  <drawFleeDir>k__BackingField: 0
 --- !u!114 &1046206788
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3991,28 +4044,7 @@ Transform:
   - {fileID: 6851883729382104515}
   - {fileID: 1098698611}
   - {fileID: 1786886775}
-  - {fileID: 4279697131049108002}
-  - {fileID: 63010604}
-  - {fileID: 1394144217}
-  - {fileID: 2091857936}
-  - {fileID: 3994094524444393680}
-  - {fileID: 993258879}
-  - {fileID: 231201306}
-  - {fileID: 23057772}
-  - {fileID: 1319356984}
-  - {fileID: 28506557}
-  - {fileID: 1207533990}
-  - {fileID: 790838332}
-  - {fileID: 1330745045}
-  - {fileID: 175953898}
-  - {fileID: 1286634945}
-  - {fileID: 918757277}
-  - {fileID: 6333778144109974157}
-  - {fileID: 1046206781}
-  - {fileID: 824596619}
-  - {fileID: 1336325626}
-  - {fileID: 1612513723}
-  - {fileID: 1092210024}
+  - {fileID: 703161168}
   - {fileID: 1354192766}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4055,7 +4087,7 @@ Transform:
   m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1054982249}
+  m_Father: {fileID: 703161168}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1092210025
 MonoBehaviour:
@@ -4069,11 +4101,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f71ea32676e6cfd4485404bb85ee9bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <damage>k__BackingField: 10
+  <damage>k__BackingField: 30
   <range>k__BackingField: 600
-  <cooldownTimer>k__BackingField: 0.05
+  <cooldownTimer>k__BackingField: 0.1
+  <laserFadeTime>k__BackingField: 0.075
   <randomAimOffsetMax>k__BackingField: 0.035
-  <laserMat>k__BackingField: {fileID: 2100000, guid: 8a22b1182895f724db3e234ce9175f7b, type: 2}
 --- !u!120 &1092210026
 LineRenderer:
   serializedVersion: 2
@@ -4254,12 +4286,12 @@ MonoBehaviour:
   <closestObstacleDist>k__BackingField: 0
   <fleeDir>k__BackingField: {x: 0, y: 0, z: 0}
   <closestHostileDist>k__BackingField: 0
-  <drawDesiredMoveDir>k__BackingField: 1
-  <drawTargetDir>k__BackingField: 1
+  <drawDesiredMoveDir>k__BackingField: 0
+  <drawTargetDir>k__BackingField: 0
   <drawScannerRange>k__BackingField: 0
-  <drawAvoidObstacleDir>k__BackingField: 1
+  <drawAvoidObstacleDir>k__BackingField: 0
   <drawAvoidObstacleRange>k__BackingField: 0
-  <drawFleeDir>k__BackingField: 1
+  <drawFleeDir>k__BackingField: 0
 --- !u!114 &1092210031
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4393,7 +4425,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 20000
   noiseScale: 100
-  density: 0.783
+  density: 0.977
   fade: 0.827
   maxSpawnSpeed: 2
   maxSpawnAngularVelocity: 0.912
@@ -4463,7 +4495,7 @@ Transform:
   m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1054982249}
+  m_Father: {fileID: 703161168}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1207533991
 MonoBehaviour:
@@ -4538,12 +4570,12 @@ MonoBehaviour:
   <closestObstacleDist>k__BackingField: 0
   <fleeDir>k__BackingField: {x: 0, y: 0, z: 0}
   <closestHostileDist>k__BackingField: 0
-  <drawDesiredMoveDir>k__BackingField: 1
-  <drawTargetDir>k__BackingField: 1
+  <drawDesiredMoveDir>k__BackingField: 0
+  <drawTargetDir>k__BackingField: 0
   <drawScannerRange>k__BackingField: 0
-  <drawAvoidObstacleDir>k__BackingField: 1
+  <drawAvoidObstacleDir>k__BackingField: 0
   <drawAvoidObstacleRange>k__BackingField: 0
-  <drawFleeDir>k__BackingField: 1
+  <drawFleeDir>k__BackingField: 0
 --- !u!114 &1207533995
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4765,11 +4797,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f71ea32676e6cfd4485404bb85ee9bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <damage>k__BackingField: 10
+  <damage>k__BackingField: 30
   <range>k__BackingField: 600
-  <cooldownTimer>k__BackingField: 0.05
+  <cooldownTimer>k__BackingField: 0.1
+  <laserFadeTime>k__BackingField: 0.075
   <randomAimOffsetMax>k__BackingField: 0.035
-  <laserMat>k__BackingField: {fileID: 2100000, guid: e5afdf69471a731448a7ccbb105788f2, type: 2}
 --- !u!1 &1286634944
 GameObject:
   m_ObjectHideFlags: 0
@@ -4809,7 +4841,7 @@ Transform:
   m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1054982249}
+  m_Father: {fileID: 703161168}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1286634946
 MonoBehaviour:
@@ -4823,11 +4855,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f71ea32676e6cfd4485404bb85ee9bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <damage>k__BackingField: 10
+  <damage>k__BackingField: 30
   <range>k__BackingField: 600
-  <cooldownTimer>k__BackingField: 0.05
+  <cooldownTimer>k__BackingField: 0.1
+  <laserFadeTime>k__BackingField: 0.075
   <randomAimOffsetMax>k__BackingField: 0.035
-  <laserMat>k__BackingField: {fileID: 2100000, guid: e5afdf69471a731448a7ccbb105788f2, type: 2}
 --- !u!120 &1286634947
 LineRenderer:
   serializedVersion: 2
@@ -5008,12 +5040,12 @@ MonoBehaviour:
   <closestObstacleDist>k__BackingField: 0
   <fleeDir>k__BackingField: {x: 0, y: 0, z: 0}
   <closestHostileDist>k__BackingField: 0
-  <drawDesiredMoveDir>k__BackingField: 1
-  <drawTargetDir>k__BackingField: 1
+  <drawDesiredMoveDir>k__BackingField: 0
+  <drawTargetDir>k__BackingField: 0
   <drawScannerRange>k__BackingField: 0
-  <drawAvoidObstacleDir>k__BackingField: 1
+  <drawAvoidObstacleDir>k__BackingField: 0
   <drawAvoidObstacleRange>k__BackingField: 0
-  <drawFleeDir>k__BackingField: 1
+  <drawFleeDir>k__BackingField: 0
 --- !u!114 &1286634952
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5155,7 +5187,7 @@ Transform:
   m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1054982249}
+  m_Father: {fileID: 703161168}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1319356985
 MonoBehaviour:
@@ -5169,11 +5201,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f71ea32676e6cfd4485404bb85ee9bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <damage>k__BackingField: 10
+  <damage>k__BackingField: 30
   <range>k__BackingField: 600
-  <cooldownTimer>k__BackingField: 0.05
+  <cooldownTimer>k__BackingField: 0.1
+  <laserFadeTime>k__BackingField: 0.075
   <randomAimOffsetMax>k__BackingField: 0.035
-  <laserMat>k__BackingField: {fileID: 2100000, guid: e5afdf69471a731448a7ccbb105788f2, type: 2}
 --- !u!120 &1319356986
 LineRenderer:
   serializedVersion: 2
@@ -5354,12 +5386,12 @@ MonoBehaviour:
   <closestObstacleDist>k__BackingField: 0
   <fleeDir>k__BackingField: {x: 0, y: 0, z: 0}
   <closestHostileDist>k__BackingField: 0
-  <drawDesiredMoveDir>k__BackingField: 1
-  <drawTargetDir>k__BackingField: 1
+  <drawDesiredMoveDir>k__BackingField: 0
+  <drawTargetDir>k__BackingField: 0
   <drawScannerRange>k__BackingField: 0
-  <drawAvoidObstacleDir>k__BackingField: 1
+  <drawAvoidObstacleDir>k__BackingField: 0
   <drawAvoidObstacleRange>k__BackingField: 0
-  <drawFleeDir>k__BackingField: 1
+  <drawFleeDir>k__BackingField: 0
 --- !u!114 &1319356991
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5501,7 +5533,7 @@ Transform:
   m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1054982249}
+  m_Father: {fileID: 703161168}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1330745046
 MonoBehaviour:
@@ -5515,11 +5547,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f71ea32676e6cfd4485404bb85ee9bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <damage>k__BackingField: 10
+  <damage>k__BackingField: 30
   <range>k__BackingField: 600
-  <cooldownTimer>k__BackingField: 0.05
+  <cooldownTimer>k__BackingField: 0.1
+  <laserFadeTime>k__BackingField: 0.075
   <randomAimOffsetMax>k__BackingField: 0.035
-  <laserMat>k__BackingField: {fileID: 2100000, guid: e5afdf69471a731448a7ccbb105788f2, type: 2}
 --- !u!120 &1330745047
 LineRenderer:
   serializedVersion: 2
@@ -5700,12 +5732,12 @@ MonoBehaviour:
   <closestObstacleDist>k__BackingField: 0
   <fleeDir>k__BackingField: {x: 0, y: 0, z: 0}
   <closestHostileDist>k__BackingField: 0
-  <drawDesiredMoveDir>k__BackingField: 1
-  <drawTargetDir>k__BackingField: 1
+  <drawDesiredMoveDir>k__BackingField: 0
+  <drawTargetDir>k__BackingField: 0
   <drawScannerRange>k__BackingField: 0
-  <drawAvoidObstacleDir>k__BackingField: 1
+  <drawAvoidObstacleDir>k__BackingField: 0
   <drawAvoidObstacleRange>k__BackingField: 0
-  <drawFleeDir>k__BackingField: 1
+  <drawFleeDir>k__BackingField: 0
 --- !u!114 &1330745052
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5894,7 +5926,7 @@ Transform:
   m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1054982249}
+  m_Father: {fileID: 703161168}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1336325627
 MonoBehaviour:
@@ -5908,11 +5940,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f71ea32676e6cfd4485404bb85ee9bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <damage>k__BackingField: 10
+  <damage>k__BackingField: 30
   <range>k__BackingField: 600
-  <cooldownTimer>k__BackingField: 0.05
+  <cooldownTimer>k__BackingField: 0.1
+  <laserFadeTime>k__BackingField: 0.075
   <randomAimOffsetMax>k__BackingField: 0.035
-  <laserMat>k__BackingField: {fileID: 2100000, guid: 8a22b1182895f724db3e234ce9175f7b, type: 2}
 --- !u!120 &1336325628
 LineRenderer:
   serializedVersion: 2
@@ -6093,12 +6125,12 @@ MonoBehaviour:
   <closestObstacleDist>k__BackingField: 0
   <fleeDir>k__BackingField: {x: 0, y: 0, z: 0}
   <closestHostileDist>k__BackingField: 0
-  <drawDesiredMoveDir>k__BackingField: 1
-  <drawTargetDir>k__BackingField: 1
+  <drawDesiredMoveDir>k__BackingField: 0
+  <drawTargetDir>k__BackingField: 0
   <drawScannerRange>k__BackingField: 0
-  <drawAvoidObstacleDir>k__BackingField: 1
+  <drawAvoidObstacleDir>k__BackingField: 0
   <drawAvoidObstacleRange>k__BackingField: 0
-  <drawFleeDir>k__BackingField: 1
+  <drawFleeDir>k__BackingField: 0
 --- !u!114 &1336325633
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6270,7 +6302,7 @@ Transform:
   m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1054982249}
+  m_Father: {fileID: 703161168}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1394144218
 MonoBehaviour:
@@ -6284,11 +6316,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f71ea32676e6cfd4485404bb85ee9bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <damage>k__BackingField: 10
+  <damage>k__BackingField: 30
   <range>k__BackingField: 600
-  <cooldownTimer>k__BackingField: 0.05
+  <cooldownTimer>k__BackingField: 0.1
+  <laserFadeTime>k__BackingField: 0.075
   <randomAimOffsetMax>k__BackingField: 0.035
-  <laserMat>k__BackingField: {fileID: 2100000, guid: 2a7c2d2237b4a5849872995bd9d27d66, type: 2}
 --- !u!120 &1394144219
 LineRenderer:
   serializedVersion: 2
@@ -6457,12 +6489,12 @@ MonoBehaviour:
   <closestObstacleDist>k__BackingField: 0
   <fleeDir>k__BackingField: {x: 0, y: 0, z: 0}
   <closestHostileDist>k__BackingField: 0
-  <drawDesiredMoveDir>k__BackingField: 1
-  <drawTargetDir>k__BackingField: 1
+  <drawDesiredMoveDir>k__BackingField: 0
+  <drawTargetDir>k__BackingField: 0
   <drawScannerRange>k__BackingField: 0
-  <drawAvoidObstacleDir>k__BackingField: 1
+  <drawAvoidObstacleDir>k__BackingField: 0
   <drawAvoidObstacleRange>k__BackingField: 0
-  <drawFleeDir>k__BackingField: 1
+  <drawFleeDir>k__BackingField: 0
 --- !u!114 &1394144223
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -6725,7 +6757,7 @@ Transform:
   m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1054982249}
+  m_Father: {fileID: 703161168}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1612513724
 MonoBehaviour:
@@ -6739,11 +6771,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f71ea32676e6cfd4485404bb85ee9bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <damage>k__BackingField: 10
+  <damage>k__BackingField: 30
   <range>k__BackingField: 600
-  <cooldownTimer>k__BackingField: 0.05
+  <cooldownTimer>k__BackingField: 0.1
+  <laserFadeTime>k__BackingField: 0.075
   <randomAimOffsetMax>k__BackingField: 0.035
-  <laserMat>k__BackingField: {fileID: 2100000, guid: 8a22b1182895f724db3e234ce9175f7b, type: 2}
 --- !u!120 &1612513725
 LineRenderer:
   serializedVersion: 2
@@ -6924,12 +6956,12 @@ MonoBehaviour:
   <closestObstacleDist>k__BackingField: 0
   <fleeDir>k__BackingField: {x: 0, y: 0, z: 0}
   <closestHostileDist>k__BackingField: 0
-  <drawDesiredMoveDir>k__BackingField: 1
-  <drawTargetDir>k__BackingField: 1
+  <drawDesiredMoveDir>k__BackingField: 0
+  <drawTargetDir>k__BackingField: 0
   <drawScannerRange>k__BackingField: 0
-  <drawAvoidObstacleDir>k__BackingField: 1
+  <drawAvoidObstacleDir>k__BackingField: 0
   <drawAvoidObstacleRange>k__BackingField: 0
-  <drawFleeDir>k__BackingField: 1
+  <drawFleeDir>k__BackingField: 0
 --- !u!114 &1612513730
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7132,7 +7164,7 @@ Transform:
   m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1054982249}
+  m_Father: {fileID: 703161168}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2091857937
 MonoBehaviour:
@@ -7146,11 +7178,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f71ea32676e6cfd4485404bb85ee9bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <damage>k__BackingField: 10
+  <damage>k__BackingField: 30
   <range>k__BackingField: 600
-  <cooldownTimer>k__BackingField: 0.05
+  <cooldownTimer>k__BackingField: 0.1
+  <laserFadeTime>k__BackingField: 0.075
   <randomAimOffsetMax>k__BackingField: 0.035
-  <laserMat>k__BackingField: {fileID: 2100000, guid: 2a7c2d2237b4a5849872995bd9d27d66, type: 2}
 --- !u!120 &2091857938
 LineRenderer:
   serializedVersion: 2
@@ -7319,12 +7351,12 @@ MonoBehaviour:
   <closestObstacleDist>k__BackingField: 0
   <fleeDir>k__BackingField: {x: 0, y: 0, z: 0}
   <closestHostileDist>k__BackingField: 0
-  <drawDesiredMoveDir>k__BackingField: 1
-  <drawTargetDir>k__BackingField: 1
+  <drawDesiredMoveDir>k__BackingField: 0
+  <drawTargetDir>k__BackingField: 0
   <drawScannerRange>k__BackingField: 0
-  <drawAvoidObstacleDir>k__BackingField: 1
+  <drawAvoidObstacleDir>k__BackingField: 0
   <drawAvoidObstacleRange>k__BackingField: 0
-  <drawFleeDir>k__BackingField: 1
+  <drawFleeDir>k__BackingField: 0
 --- !u!114 &2091857942
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7500,7 +7532,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 20000
   noiseScale: 7500
-  density: 0.415
+  density: 0.59
   fade: 0.8
   maxSpawnSpeed: 2
   maxSpawnAngularVelocity: 0.912
@@ -7645,7 +7677,7 @@ Transform:
   m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1054982249}
+  m_Father: {fileID: 703161168}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &3994094524444393681
 MonoBehaviour:
@@ -7672,12 +7704,12 @@ MonoBehaviour:
   <closestObstacleDist>k__BackingField: 0
   <fleeDir>k__BackingField: {x: 0, y: 0, z: 0}
   <closestHostileDist>k__BackingField: 0
-  <drawDesiredMoveDir>k__BackingField: 1
-  <drawTargetDir>k__BackingField: 1
+  <drawDesiredMoveDir>k__BackingField: 0
+  <drawTargetDir>k__BackingField: 0
   <drawScannerRange>k__BackingField: 0
-  <drawAvoidObstacleDir>k__BackingField: 1
+  <drawAvoidObstacleDir>k__BackingField: 0
   <drawAvoidObstacleRange>k__BackingField: 0
-  <drawFleeDir>k__BackingField: 1
+  <drawFleeDir>k__BackingField: 0
 --- !u!54 &3994094524444393682
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7787,11 +7819,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f71ea32676e6cfd4485404bb85ee9bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <damage>k__BackingField: 10
+  <damage>k__BackingField: 30
   <range>k__BackingField: 600
-  <cooldownTimer>k__BackingField: 0.05
+  <cooldownTimer>k__BackingField: 0.1
+  <laserFadeTime>k__BackingField: 0.075
   <randomAimOffsetMax>k__BackingField: 0.035
-  <laserMat>k__BackingField: {fileID: 2100000, guid: e5afdf69471a731448a7ccbb105788f2, type: 2}
 --- !u!120 &3994094524444393688
 LineRenderer:
   serializedVersion: 2
@@ -7912,7 +7944,7 @@ Transform:
   m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1054982249}
+  m_Father: {fileID: 703161168}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &6333778144109974157
 Transform:
@@ -7927,7 +7959,7 @@ Transform:
   m_LocalScale: {x: 3.5, y: 3.5, z: 3.5}
   m_ConstrainProportionsScale: 1
   m_Children: []
-  m_Father: {fileID: 1054982249}
+  m_Father: {fileID: 703161168}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &6851883729382104515
 Transform:
@@ -8002,12 +8034,12 @@ MonoBehaviour:
   <closestObstacleDist>k__BackingField: 0
   <fleeDir>k__BackingField: {x: 0, y: 0, z: 0}
   <closestHostileDist>k__BackingField: 0
-  <drawDesiredMoveDir>k__BackingField: 1
-  <drawTargetDir>k__BackingField: 1
+  <drawDesiredMoveDir>k__BackingField: 0
+  <drawTargetDir>k__BackingField: 0
   <drawScannerRange>k__BackingField: 0
-  <drawAvoidObstacleDir>k__BackingField: 1
+  <drawAvoidObstacleDir>k__BackingField: 0
   <drawAvoidObstacleRange>k__BackingField: 0
-  <drawFleeDir>k__BackingField: 1
+  <drawFleeDir>k__BackingField: 0
 --- !u!54 &8705371768902527890
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8117,11 +8149,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f71ea32676e6cfd4485404bb85ee9bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <damage>k__BackingField: 10
+  <damage>k__BackingField: 30
   <range>k__BackingField: 600
-  <cooldownTimer>k__BackingField: 0.05
+  <cooldownTimer>k__BackingField: 0.1
+  <laserFadeTime>k__BackingField: 0.075
   <randomAimOffsetMax>k__BackingField: 0.035
-  <laserMat>k__BackingField: {fileID: 2100000, guid: 8a22b1182895f724db3e234ce9175f7b, type: 2}
 --- !u!120 &8705371768902527896
 LineRenderer:
   serializedVersion: 2
@@ -8299,12 +8331,12 @@ MonoBehaviour:
   <closestObstacleDist>k__BackingField: 0
   <fleeDir>k__BackingField: {x: 0, y: 0, z: 0}
   <closestHostileDist>k__BackingField: 0
-  <drawDesiredMoveDir>k__BackingField: 1
-  <drawTargetDir>k__BackingField: 1
+  <drawDesiredMoveDir>k__BackingField: 0
+  <drawTargetDir>k__BackingField: 0
   <drawScannerRange>k__BackingField: 0
-  <drawAvoidObstacleDir>k__BackingField: 1
+  <drawAvoidObstacleDir>k__BackingField: 0
   <drawAvoidObstacleRange>k__BackingField: 0
-  <drawFleeDir>k__BackingField: 1
+  <drawFleeDir>k__BackingField: 0
 --- !u!54 &8802091314706439743
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -8402,11 +8434,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f71ea32676e6cfd4485404bb85ee9bea, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  <damage>k__BackingField: 10
+  <damage>k__BackingField: 30
   <range>k__BackingField: 600
-  <cooldownTimer>k__BackingField: 0.05
+  <cooldownTimer>k__BackingField: 0.1
+  <laserFadeTime>k__BackingField: 0.075
   <randomAimOffsetMax>k__BackingField: 0.035
-  <laserMat>k__BackingField: {fileID: 2100000, guid: 2a7c2d2237b4a5849872995bd9d27d66, type: 2}
 --- !u!120 &8802091314706439748
 LineRenderer:
   serializedVersion: 2

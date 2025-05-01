@@ -135,6 +135,15 @@ public class SpaceShip : MonoBehaviour
         maxSpeed = _maxSpeed;
     }
 
+    public void DebugDirs(bool _bool) {
+        drawDesiredMoveDir = _bool;
+        drawTargetDir = _bool;
+        drawAvoidObstacleDir = _bool;
+        drawFleeDir = _bool;
+        drawScannerRange = _bool;
+        drawAvoidObstacleRange = _bool;
+    }
+
 
     #endregion
 //--#

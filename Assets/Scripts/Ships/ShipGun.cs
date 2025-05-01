@@ -19,8 +19,8 @@ public class ShipGun : MonoBehaviour
     [field: SerializeField] public float damage  {get; private set;}
     [field: SerializeField] public float range  {get; private set;}
     [field: SerializeField] public float cooldownTimer  {get; private set;}
+    [field: SerializeField] public float laserFadeTime  {get; private set;}
     [field: SerializeField] public float randomAimOffsetMax  {get; private set;}
-    [field: SerializeField] public Material laserMat  {get; private set;}
 
     private RaycastHit hit;
 
@@ -50,8 +50,9 @@ public class ShipGun : MonoBehaviour
 
         lineRenderer.shadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.Off;
         
-        if (laserMat == null) lineRenderer.material = SettingsSingleton.Get.laserMat;
-        else lineRenderer.material = laserMat;
+        lineRenderer.material = SettingsSingleton.Get.laserMat;
+        lineRenderer.material.SetColor("_BaseColor", Random.ColorHSV(0f, 1f, 1f, 1f, 1f, 1f));
+        lineRenderer.material.SetColor("_EmissionColor", lineRenderer.material.GetColor("_BaseColor") * 5);
 
         lineRenderer.loop = false;
 
@@ -59,7 +60,12 @@ public class ShipGun : MonoBehaviour
     }
 
     private void FixedUpdate() {
-        if (Time.time - lastShotTime >= 0.04f) lineRenderer.enabled = false;
+        if (Time.time - lastShotTime >= laserFadeTime) {
+            lineRenderer.enabled = false;
+        }
+        else {
+            lineRenderer.material.SetColor("_EmissionColor", lineRenderer.material.GetColor("_BaseColor") * 5 * (1 - ((Time.time - lastShotTime) / laserFadeTime)));
+        }
     }
 
 

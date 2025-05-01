@@ -3,7 +3,7 @@ using BehaviourTree;
 using UnityEngine;
 
 [RequireComponent(typeof(SpaceShip))]
-public class MinerBT : BehaviourTree.Tree
+public class MinerBT : BehaviourTree.BehaviurTree
 {
     protected override Node SetupTree()
     {

@@ -3,7 +3,7 @@ using BehaviourTree;
 using UnityEngine;
 
 [RequireComponent(typeof(SpaceShip))]
-public class PirateBT : BehaviourTree.Tree
+public class PirateBT : BehaviourTree.BehaviurTree
 {
     protected override Node SetupTree()
     {

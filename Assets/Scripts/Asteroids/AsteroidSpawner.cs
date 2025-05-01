@@ -68,6 +68,7 @@ public class AsteroidSpawner : MonoBehaviour
 
     private void PopulateSpawnPoints() {
         spawnPoints = new List<Vector3>(); // empty List
+        Random.InitState((int) (Time.time * 100));
         seed = Random.Range(1, 100000);
 
         if (usingDebugSeed){ // manually set the seeds for when debugging
