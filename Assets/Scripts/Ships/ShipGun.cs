@@ -25,6 +25,7 @@ public class ShipGun : MonoBehaviour
     private RaycastHit hit;
 
     private LineRenderer lineRenderer;
+    private SpaceShip ship;
 
     private float lastShotTime;
 
@@ -43,6 +44,7 @@ public class ShipGun : MonoBehaviour
 
     private void Start() {
         lineRenderer = GetComponent<LineRenderer>();
+        ship = GetComponent<SpaceShip>();
 
         lineRenderer.useWorldSpace = true;
         lineRenderer.widthMultiplier = 3;
@@ -99,6 +101,7 @@ public class ShipGun : MonoBehaviour
             
             if (hit.transform.TryGetComponent<Health>(out Health hitHealth)) {
                 hitHealth.Damage(damage);
+                ship.AddScore(damage);
                 return true;
             }
             else return false;

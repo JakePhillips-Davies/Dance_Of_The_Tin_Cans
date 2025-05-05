@@ -3,7 +3,7 @@ using BehaviourTree;
 using UnityEngine;
 
 [RequireComponent(typeof(SpaceShip))]
-public class MinerBT : BehaviourTree.BehaviurTree
+public class BountyHunterBT : BehaviourTree.BehaviurTree
 {
     protected override Node SetupTree()
     {
@@ -14,7 +14,7 @@ public class MinerBT : BehaviourTree.BehaviurTree
                     new Selector(new List<Node>() { // Handle target locking
 
                         new CheckIsTargetLocked(ship),
-                        new LogTargetInRange(ship, "Asteroid"),
+                        new LogTargetInRange(ship, "Pirate"),
                         new LogSearchPoint(ship)
 
                     }),
@@ -24,13 +24,13 @@ public class MinerBT : BehaviourTree.BehaviurTree
                         new Timer(ship.shipEmotionChip.timeoutTime),
                         new Selector(new List<Node>() { // Re-check for new target
 
-                            new LogTargetInRange(ship, "Asteroid"),
+                            new LogTargetInRange(ship, "Pirate"),
                             new LogSearchPoint(ship)
 
                         })
 
                     }),
-                    new Sequence(new List<Node>() { // Handle mining
+                    new Sequence(new List<Node>() { // Handle attacking
 
                         new CheckTargetInWeaponRange(ship),
                         new AttackTarget(ship)
@@ -52,7 +52,6 @@ public class MinerBT : BehaviourTree.BehaviurTree
 
                     }),
                     
-                    new LogFleeDir(ship, "Pirate"), // Log flee direction
                     new LogAvoidObstacleDir(ship), // Log avoid obstacle direction
 
                     new CalculateDesiredDir(ship), 

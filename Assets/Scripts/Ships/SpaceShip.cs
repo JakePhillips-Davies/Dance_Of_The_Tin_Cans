@@ -1,6 +1,7 @@
 using UnityEngine;
 using EditorAttributes;
 using Random = UnityEngine.Random;
+using NUnit.Framework.Constraints;
 
 [RequireComponent(typeof(Rigidbody), typeof(Health), typeof(ShipEmotionChip))]
 public class SpaceShip : MonoBehaviour
@@ -15,6 +16,7 @@ public class SpaceShip : MonoBehaviour
     [field: SerializeField] public float scannerRange { get; private set; }
     [field: SerializeField] public float searchRange { get; private set; }
     [field: SerializeField] public float avoidObstacleRange { get; private set; }
+    [field: SerializeField, ReadOnly] public float score { get; private set; } = 0;
 
     [field: Space(10)]
     [field: Title("Logged points/directions")]
@@ -55,7 +57,7 @@ public class SpaceShip : MonoBehaviour
     #region Unity Methods
 
 
-    private void Start() {
+    private void Awake() {
         rb = GetComponent<Rigidbody>();
         health = GetComponent<Health>();
         shipEmotionChip = GetComponent<ShipEmotionChip>();
@@ -95,7 +97,7 @@ public class SpaceShip : MonoBehaviour
 //--#
 
 //--#
-    #region Setters
+    #region Misc
 
 
     public void SetTarget(Transform _target) {
@@ -142,6 +144,21 @@ public class SpaceShip : MonoBehaviour
         drawFleeDir = _bool;
         drawScannerRange = _bool;
         drawAvoidObstacleRange = _bool;
+    }
+
+    public void AddScore(float _score) {
+        score += _score;
+    }
+
+    public override string ToString() {
+        return "Ship: " + name + "\n" +
+               "Speed: " + rb.linearVelocity.magnitude + "\n\n" +
+               "Health: " + health.currentHealth + "\n" +
+               "Score: " + score + "\n\n" +
+               "Target: " + ((target == null)? "none" : target.name) + "\n\n" +
+               "Caution: " + shipEmotionChip.caution + "\n" +
+               "Fear: " + shipEmotionChip.fear + "\n" +
+               "Greed: " + shipEmotionChip.greed + "\n";
     }
 
 

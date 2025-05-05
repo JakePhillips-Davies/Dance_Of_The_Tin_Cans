@@ -1,23 +1,34 @@
 using BehaviourTree;
 using UnityEngine;
 
+/// <summary>
+/// Will pass a success after a certain amount of time has passed
+/// </summary>
 public class Timer : Node
 {
-    private SpaceShip ship;
+    private float holdTime;
+    private float currTime;
+    private float lastPingTime;
 
-    public Timer(SpaceShip _ship) {
-        this.ship = _ship;
+    public Timer(float holdTime) { 
+        this.holdTime = holdTime;
+        this.currTime = 0;
+
+        this.lastPingTime = Time.time;
     }
 
     public override NodeState Evaluate() {
         try {
-            ship.shipEmotionChip.IncramentTimer(Time.fixedDeltaTime);
+            currTime += Time.time - lastPingTime;
+            lastPingTime = Time.time;
 
-            if (ship.shipEmotionChip.timer >= ship.shipEmotionChip.timeoutTime)
+            if (currTime >= holdTime) {
+                currTime = 0;
                 return NodeState.SUCCESS;
-            
-            else 
+            }
+            else {
                 return NodeState.FAILURE;
+            }
         }
         catch (System.Exception) {
             return NodeState.FAILURE;

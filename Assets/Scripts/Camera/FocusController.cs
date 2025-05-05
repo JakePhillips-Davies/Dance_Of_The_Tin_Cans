@@ -11,6 +11,7 @@ public class FocusController : MonoBehaviour
     public Transform[] objectList { get; private set; }
     public int focus = 0;
     public string focusName;
+    public string focusInfo = "eee\neee";
     private Transform cachedFocus;
     
     private void Awake() {
@@ -18,6 +19,7 @@ public class FocusController : MonoBehaviour
         
         if(ui != null) {
             ui.rootVisualElement.Q<TextField>("Focus").dataSource = this;
+            ui.rootVisualElement.Q<TextField>("FocusInfo").dataSource = this;
             ui.rootVisualElement.Q<Button>("Previous").clickable.clicked += () => {
                 focus--;
 
@@ -46,8 +48,10 @@ public class FocusController : MonoBehaviour
     private void FixedUpdate() {
         UpdateObjectList();
         
-        if (GetFocus() != null)
+        if (GetFocus() != null) {
             GetFocus().GetComponent<SpaceShip>().DebugDirs(true);
+            focusInfo = GetFocus().GetComponent<SpaceShip>().ToString();
+        }
     }
 
     private void Update() {
