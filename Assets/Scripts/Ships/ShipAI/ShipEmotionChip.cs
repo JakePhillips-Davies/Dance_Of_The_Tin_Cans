@@ -18,10 +18,10 @@ public class ShipEmotionChip : MonoBehaviour
 
 
     [field: Title("Personality")]
-    [field: SerializeField, Range(0.01f, 10f)] public float cautiousness  {get; private set;}
-    [field: SerializeField, Range(0.01f, 10f)] public float fearfulness  {get; private set;}
-    [field: SerializeField, Range(0.01f, 10f)] public float jumpiness  {get; private set;}
-    [field: SerializeField, Range(0.01f, 10f)] public float greediness  {get; private set;}
+    [field: SerializeField, Range(0.01f, 10f)] public float cautiousness  {get;  set;} // CBA making setters I have an hour to upload
+    [field: SerializeField, Range(0.01f, 10f)] public float fearfulness  {get;  set;}
+    [field: SerializeField, Range(0.01f, 10f)] public float jumpiness  {get;  set;}
+    [field: SerializeField, Range(0.01f, 10f)] public float greediness  {get;  set;}
     [field: SerializeField] public float normalMaxSpeed  {get; private set;}
 
     [field: Space(10)]
@@ -29,6 +29,7 @@ public class ShipEmotionChip : MonoBehaviour
     [field: SerializeField, ReadOnly] public float caution  {get; private set;}
     [field: SerializeField, ReadOnly] public float fear  {get; private set;}
     [field: SerializeField, ReadOnly] public float greed  {get; private set;}
+    [field: SerializeField, ReadOnly] public float desireToLeave  {get; private set;}
 
     
     [field: Space(10)]
@@ -98,6 +99,9 @@ public class ShipEmotionChip : MonoBehaviour
         greed = newGreed;
 
         ship.SetMaxSpeed(Mathf.Clamp(normalMaxSpeed + (fear * normalMaxSpeed / 10) - (caution * normalMaxSpeed / 10) + (greed * normalMaxSpeed / 10), normalMaxSpeed / 2, normalMaxSpeed * 1.5f));
+
+
+        desireToLeave = (Mathf.Max(0f, ship.score - 6000) / (10000 * Mathf.Max(1f, greed))) + (fear / 50);
 
     }
 

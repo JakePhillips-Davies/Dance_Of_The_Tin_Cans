@@ -1,12 +1,12 @@
 using UnityEngine;
 
-namespace BehaviourTree {
+namespace BehaviourTrees {
 //------------------------------------------
 
-public abstract class BehaviurTree : MonoBehaviour
+public abstract class BehaviourTree : MonoBehaviour
 {
 
-    private Node root = null;
+    public Node root { get; private set; } = null;
 
     protected void Start()
     {

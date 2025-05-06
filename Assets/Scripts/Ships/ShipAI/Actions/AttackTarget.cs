@@ -1,4 +1,4 @@
-using BehaviourTree;
+using BehaviourTrees;
 
 public class AttackTarget : Node
 {
@@ -14,6 +14,10 @@ public class AttackTarget : Node
             return NodeState.FAILURE;
         }
 
-        return ship.gun.Shoot(ship.target.transform.position - ship.gun.transform.position) ? NodeState.SUCCESS : NodeState.FAILURE;
+        if (ship.gun.Shoot(ship.target.transform.position - ship.gun.transform.position)) {
+            SetTopData("boredomTimer", 0);
+            return NodeState.SUCCESS;
+        }
+        else return NodeState.FAILURE;
     }
 }

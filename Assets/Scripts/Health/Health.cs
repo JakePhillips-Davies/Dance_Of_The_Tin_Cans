@@ -30,6 +30,8 @@ public class Health : MonoBehaviour {
         if (currentHealth <= 0) {
             Destroy(gameObject);
         }
+
+        if (TryGetComponent<SpaceShip>(out SpaceShip ship)) ship.AddScore(0 - amount);
     }
 
 }

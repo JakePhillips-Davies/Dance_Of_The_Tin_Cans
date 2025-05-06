@@ -67,6 +67,7 @@ public class ShipGun : MonoBehaviour
         }
         else {
             lineRenderer.material.SetColor("_EmissionColor", lineRenderer.material.GetColor("_BaseColor") * 5 * (1 - ((Time.time - lastShotTime) / laserFadeTime)));
+            lineRenderer.widthMultiplier = Mathf.Max(3f, (Camera.main.transform.position - transform.position).magnitude / 150);
         }
     }
 
@@ -95,6 +96,7 @@ public class ShipGun : MonoBehaviour
         lastShotTime = Time.time;
 
         lineRenderer.enabled = true;
+            lineRenderer.widthMultiplier = Mathf.Max(3f, (Camera.main.transform.position - transform.position).magnitude / 150);
 
         if (Physics.Raycast(transform.position, direction, out hit, range)) {
             lineRenderer.SetPositions(new Vector3[] {transform.position, hit.point});

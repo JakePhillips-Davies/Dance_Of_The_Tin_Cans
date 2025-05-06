@@ -1,18 +1,18 @@
 using BehaviourTrees;
 using UnityEngine;
 
-public class LogSearchDir : Node
+public class LogLeaveDir : Node
 {
     private SpaceShip ship;
 
-    public LogSearchDir(SpaceShip _ship) {
+    public LogLeaveDir(SpaceShip _ship) {
         this.ship = _ship;
     }
 
     public override NodeState Evaluate() {
         try {
-            ship.SetTargetDir((ship.searchPoint - ship.transform.position).normalized);
-            ship.SetTargetDist((ship.searchPoint - ship.transform.position).magnitude);
+            ship.SetTargetDir(ship.transform.position.normalized); // Away from 0, 0, 0
+            ship.SetTargetDist(ship.searchRange);
     
             return NodeState.SUCCESS;
         }

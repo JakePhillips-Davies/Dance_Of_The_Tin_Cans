@@ -1,5 +1,5 @@
 using UnityEngine;
-using BehaviourTree;
+using BehaviourTrees;
 
 public class LogTargetInRange : Node
 {
@@ -30,8 +30,8 @@ public class LogTargetInRange : Node
 
                 if (itt > 100) return NodeState.FAILURE;
             }
-
-            ship.shipEmotionChip.ResetTimer();
+            
+            SetTopData("boredomTimer", 0);
 
             return NodeState.SUCCESS;
         }

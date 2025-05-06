@@ -1,4 +1,4 @@
-using BehaviourTree;
+using BehaviourTrees;
 
 public class CheckTargetInWeaponRange : Node
 {

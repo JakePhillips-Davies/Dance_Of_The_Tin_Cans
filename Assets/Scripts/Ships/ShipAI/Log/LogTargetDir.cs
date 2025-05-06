@@ -1,4 +1,4 @@
-using BehaviourTree;
+using BehaviourTrees;
 using UnityEngine;
 
 public class LogTargetDir : Node

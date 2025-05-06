@@ -50,7 +50,7 @@ public class FocusController : MonoBehaviour
         
         if (GetFocus() != null) {
             GetFocus().GetComponent<SpaceShip>().DebugDirs(true);
-            focusInfo = GetFocus().GetComponent<SpaceShip>().ToString();
+            focusInfo = GetFocus().GetComponent<SpaceShip>().StringyyyStriiiingyyyyyy();
         }
     }
 

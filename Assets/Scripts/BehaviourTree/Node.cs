@@ -1,6 +1,6 @@
 using System.Collections.Generic;
 
-namespace BehaviourTree {
+namespace BehaviourTrees {
 //------------------------------------------
 
 public enum NodeState
@@ -51,21 +51,28 @@ public class Node
         dataContext[key] = value;
     }
 
+    public void SetTopData(string key, object value)
+    {
+        Node node = this;
+        while (node != null) {
+
+            if (node.parent != null)
+                node = node.parent;
+            else {
+                node.SetData(key, value);
+                return;
+            }
+
+        }
+    }
+
     public object GetData(string key) {
         object value;
         if (dataContext.TryGetValue(key, out value))
             return value;
-
-        Node node = parent;
-        while (node != null) {
-
-            value = node.GetData(key);
-            if (value != null)
-                return value;
-            node = node.parent;
-
-        }
-        return null;
+        else if (parent != null)
+            return parent.GetData(key);
+        else return null;
     }
 
     public bool ClearData(string key) {

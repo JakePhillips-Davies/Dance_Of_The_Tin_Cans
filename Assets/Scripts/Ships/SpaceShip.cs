@@ -1,7 +1,7 @@
 using UnityEngine;
 using EditorAttributes;
-using Random = UnityEngine.Random;
-using NUnit.Framework.Constraints;
+using BehaviourTrees;
+using Unity.VisualScripting;
 
 [RequireComponent(typeof(Rigidbody), typeof(Health), typeof(ShipEmotionChip))]
 public class SpaceShip : MonoBehaviour
@@ -150,15 +150,24 @@ public class SpaceShip : MonoBehaviour
         score += _score;
     }
 
-    public override string ToString() {
+    public void Leave() {
+        FindFirstObjectByType<ShipSpawner>().RemoveShip(this);
+    }
+
+    public string StringyyyStriiiingyyyyyy() { // for some reason adding a tostring made the inspector up and vanish so it goes by this name now
+        string boredomTimer = GetComponent<BehaviourTree>().root.GetData("boredomTimer") == null ? "0" : GetComponent<BehaviourTree>().root.GetData("boredomTimer").ConvertTo<float>().ToString("n2");
+
         return "Ship: " + name + "\n" +
-               "Speed: " + rb.linearVelocity.magnitude + "\n\n" +
-               "Health: " + health.currentHealth + "\n" +
-               "Score: " + score + "\n\n" +
+               "Speed: " + rb.linearVelocity.magnitude.ToString("n2") + "\n\n" +
+               "Health: " + health.currentHealth.ToString("n2") + "\n" +
+               "Score: " + score.ToString("n2") + "\n\n" +
                "Target: " + ((target == null)? "none" : target.name) + "\n\n" +
-               "Caution: " + shipEmotionChip.caution + "\n" +
-               "Fear: " + shipEmotionChip.fear + "\n" +
-               "Greed: " + shipEmotionChip.greed + "\n";
+               "Caution: " + shipEmotionChip.caution.ToString("n2") + "\n" +
+               "Fear: " + shipEmotionChip.fear.ToString("n2") + "\n" +
+               "Greed: " + shipEmotionChip.greed.ToString("n2") + "\n" +
+               "Boredom timer: " + boredomTimer + "\n\n" +
+               "Desire to leave: " + shipEmotionChip.desireToLeave.ToString("n2") + "\n";
+
     }
 
 

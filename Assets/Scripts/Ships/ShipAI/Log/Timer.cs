@@ -1,4 +1,5 @@
-using BehaviourTree;
+using BehaviourTrees;
+using Unity.VisualScripting;
 using UnityEngine;
 
 /// <summary>
@@ -7,23 +8,27 @@ using UnityEngine;
 public class Timer : Node
 {
     private float holdTime;
-    private float currTime;
     private float lastPingTime;
+    private string key;
 
-    public Timer(float holdTime) { 
+    public Timer(float holdTime, string _key) { 
         this.holdTime = holdTime;
-        this.currTime = 0;
+        this.key = _key;
 
         this.lastPingTime = Time.time;
+
     }
 
     public override NodeState Evaluate() {
         try {
-            currTime += Time.time - lastPingTime;
+            float timer = (GetData(key) == null) ? 0f : GetData(key).ConvertTo<float>();
+            timer += Time.time - lastPingTime;
             lastPingTime = Time.time;
 
-            if (currTime >= holdTime) {
-                currTime = 0;
+            SetTopData(key, timer);
+
+            if (GetData(key).ConvertTo<float>() >= holdTime) {
+                SetTopData(key, 0);
                 return NodeState.SUCCESS;
             }
             else {

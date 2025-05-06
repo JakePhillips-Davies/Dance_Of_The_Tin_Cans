@@ -1,5 +1,5 @@
 using System;
-using BehaviourTree;
+using BehaviourTrees;
 using UnityEngine;
 
 public class LogFleeDir : Node
