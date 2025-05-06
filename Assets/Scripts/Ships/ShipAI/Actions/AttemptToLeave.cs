@@ -11,7 +11,7 @@ public class AttemptToLeave : Node
 
     public override NodeState Evaluate() {
         try {
-            ship.Leave();
+            if (ship.transform.position.magnitude > 20000) ship.Leave();
     
             return NodeState.FAILURE;
         }

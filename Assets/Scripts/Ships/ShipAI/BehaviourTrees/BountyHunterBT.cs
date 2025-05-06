@@ -23,7 +23,9 @@ public class BountyHunterBT : BehaviourTrees.BehaviourTree
 
                             new CalculateDesiredDir(ship), 
 
-                            new ApplyThrust(ship)
+                            new ApplyThrust(ship),
+
+                            new AttemptToLeave(ship)
 
                         })
 
